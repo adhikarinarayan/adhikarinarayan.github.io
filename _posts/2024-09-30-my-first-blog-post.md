@@ -5,8 +5,6 @@ date: 2024-09-30
 categories: Maths
 ---
 
-# Countability and Natural Numbers
-
 ### Definition of Countability
 
 A set is countable if its elements can be put in a one-to-one correspondence with the natural numbers or a subset of the natural numbers.
