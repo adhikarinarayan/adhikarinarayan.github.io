@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Research
+title: Projects
 ---
 
-# Research
+# Projects
 
-{% for project in site.research %}
+{% for project in site.projects %}
   <article>
     <h2><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h2>
     <p>{{ project.excerpt }}</p>
