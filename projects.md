@@ -5,10 +5,17 @@ title: Projects
 
 # Projects
 
-{% for project in site.projects %}
-  <article>
-    <h2><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h2>
-    <p>{{ project.excerpt }}</p>
-    <p><a href="{{ project.url | relative_url }}">Learn more</a></p>
-  </article>
-{% endfor %}
+<div class="project-grid"> 
+  <div class="project-tile">
+    <h3>Project Title 1</h3>
+    <p>Brief description of Project 1.</p>
+    <a href="https://github.com/your-username/repo1" class="project-link">View on GitHub</a>
+  </div>
+
+  <div class="project-tile">
+    <h3>Project Title 2</h3>
+    <p>Brief description of Project 2.</p>
+    <a href="https://github.com/your-username/repo2" class="project-link">View on GitHub</a>
+  </div>
+
+  </div> 
