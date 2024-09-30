@@ -217,3 +217,10 @@ footer {
 .github-button:hover {
     color: #fff; /* Optional: Change text color on hover */
 }
+
+
+.blog-post {
+  background-color: #d8bfd8; 
+  padding: 20px;
+  border-radius: 8px;
+}
