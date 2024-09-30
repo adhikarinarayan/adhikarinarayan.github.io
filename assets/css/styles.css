@@ -71,14 +71,15 @@ h1, h2, h3 {
 }
 
 .profile-picture {
-  width: 100px; /* Adjust the size as needed */
-  height: 100px; /* Same as width for a square */
+  width: 150px; /* Adjust the size as needed */
+  height: 150px; /* Same as width for a square */
   border-radius: 0; /* Remove rounded corners for a square */
   object-fit: cover; /* Ensure the image covers the entire area */
   float: right; /* Float the image to the right corner */
   margin-left: 20px; /* Add some space between text and image */
+  margin-right: 20px; /* Add margin to the right to prevent sticking to the border */
+  margin-top: 20px; /* Add margin to the top to create some spacing from the top */ 
 }
-
 /* Blog Section Styles */
 article {
     background-color: #f8f9fa;
@@ -142,14 +143,16 @@ article:hover {
 }
 
 /* Footer Styles */
+/*
 footer {
     text-align: center;
     padding: 1rem;
-    background-color: #f0f0f5; /* Light footer color */
-    color: #333; /* Darker text for contrast */
-    width: 80%; /* Reduced width */
-    margin: 0 auto; /* Center the footer */
+    background-color: #f0f0f5; 
+    color: #333; 
+    width: 80%; 
+    margin: 0 auto; 
 }
+*/ 
 
 /* Responsive Design */
 @media (max-width: 768px) {
