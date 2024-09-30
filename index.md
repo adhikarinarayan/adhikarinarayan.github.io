@@ -7,7 +7,7 @@ title: About Me
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> 
 </head>
 
-<img src="/assets/images/profile1.jpg" alt="Your Name" class="profile-picture">
+<img src="/assets/images/profile11.jpg" alt="Your Name" class="profile-picture">
 
 <div class="profile-container">
     <div class="content">
