@@ -232,3 +232,62 @@ footer {
   border-top: 1px solid #ddd; 
   margin: 20px 0;
 }
+
+/* for projects */
+
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust minmax for tile size */
+  grid-gap: 20px; 
+}
+
+.project-tile {
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  position: relative; /* Required for pseudo-elements */
+  overflow: hidden; /* Hide overflowing pseudo-elements */
+}
+
+.project-tile::before,
+.project-tile::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 10px; /* Adjust for cube thickness */
+  background-color: #ddd; /* Slightly darker color for the edges */
+  transition: transform 0.3s ease; /* Add smooth transition */
+}
+
+.project-tile::before {
+  top: 0;
+  left: 0;
+  transform-origin: top left; /* Rotate from top left corner */
+  transform: rotateX(-45deg); /* Rotate on X-axis */
+}
+
+.project-tile::after {
+  bottom: 0;
+  right: 0;
+  transform-origin: bottom right; /* Rotate from bottom right corner */
+  transform: rotateX(45deg); /* Rotate on X-axis */
+}
+
+.project-tile:hover::before,
+.project-tile:hover::after {
+  transform: rotateX(0deg); /* Flatten the edges on hover */
+}
+
+.project-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff; /* Blue button color */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 15px;
+}
+
