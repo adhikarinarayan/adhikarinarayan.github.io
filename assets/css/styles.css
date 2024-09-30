@@ -296,11 +296,11 @@ footer {
 .profile-container blockquote {
   background-color: transparent;
   border: none;
-  margin: 30px 0; 
+  margin: 30px 0 50px 0; /* Increased bottom margin */
   padding: 0; 
   font-style: italic;
   text-align: center; 
-  color: red; /* Add this line to set the quote color to red */
+  color: red; 
 }
 
 .profile-container blockquote p {
