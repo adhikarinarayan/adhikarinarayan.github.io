@@ -19,6 +19,7 @@ title: About Me
      <p> 
 Outside of work, I enjoy discussing new books, exploring philosophical questions related to AI, talking about cricket, and sharing music recommendations. In my free time, you can often find me playing cricket or volleyball. I've given talks on topics related to my work, and you can find the slides from these presentations <a href="https://github.com/adhikarinarayan/talks">here</a>. If you're interested in my projects or have any ideas you'd like to discuss, feel free to contact me.
     </p>
+    
   </div> 
 </div>
 
