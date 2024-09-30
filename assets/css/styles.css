@@ -242,13 +242,13 @@ footer {
 }
 
 .project-tile {
-  background-color: #f8f9fa;
-  border: 1px solid #ddd;
+  background-color: #444; /* Dark Gray */
+  color: #fff; 
+  border: 1px solid #555; 
   padding: 20px;
   border-radius: 8px;
   text-align: center;
-  position: relative; /* Required for pseudo-elements */
-  /* overflow: hidden;  Remove this line */ 
+  position: relative; 
 }
 
 .project-tile::before,
@@ -256,28 +256,32 @@ footer {
   content: '';
   position: absolute;
   width: 100%;
-  height: 10px; /* Adjust for cube thickness */
-  background-color: #ddd; /* Slightly darker color for the edges */
-  transition: transform 0.3s ease; /* Add smooth transition */
+  height: 10px; 
+  background-color: #333; /* Slightly darker than tile background */
+  transition: transform 0.3s ease; 
 }
 
 .project-tile::before {
   top: 0;
   left: 0;
-  transform-origin: top left; /* Rotate from top left corner */
-  transform: rotateX(-45deg); /* Rotate on X-axis */
+  transform-origin: top left; 
+  transform: rotateX(-45deg); 
 }
 
 .project-tile::after {
   bottom: 0;
   right: 0;
-  transform-origin: bottom right; /* Rotate from bottom right corner */
-  transform: rotateX(45deg); /* Rotate on X-axis */
+  transform-origin: bottom right;
+  transform: rotateX(45deg); 
 }
 
 .project-tile:hover::before,
 .project-tile:hover::after {
-  transform: rotateX(0deg); /* Flatten the edges on hover */
+  transform: rotateX(0deg); 
+}
+
+.project-tile:hover {
+  background-color: #333; 
 }
 
 .project-link {
