@@ -273,7 +273,7 @@ footer {
 
 .brain-food-container {
   display: flex;
-  gap: 45px; /* Space between columns */
+  gap: 80px; /* Space between columns */
   justify-content: center; /* Center the columns horizontally */
 }
 
