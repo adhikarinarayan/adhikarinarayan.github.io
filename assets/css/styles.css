@@ -256,10 +256,6 @@ footer {
   color: #eee; /* Light gray color for better contrast */
 /* ... other CSS rules ... */
 
-/* Center the "Projects" heading */
-#projects h1 { /* Assuming your heading is an h1 */
-  text-align: center; 
-}
 
 .project-tile::before {
   top: 0;
