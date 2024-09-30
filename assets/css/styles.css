@@ -254,8 +254,7 @@ footer {
 
 .project-tile h3 { /* Target the project title (h3) */
   color: #eee; /* Light gray color for better contrast */
-/* ... other CSS rules ... */
-
+    
 
 .project-tile::before {
   top: 0;
@@ -272,10 +271,11 @@ footer {
 .project-link {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #83a5c9; /* Blue button color */
+  background-color: #f2f0f0;
   color: #fff;
   text-decoration: none;
-  border-radius: 5px; /* Rounded corners for button shape */
+  border-radius: 5px;
   margin-top: 15px;
+  border: 2px solid #fff; /* White border */
 }
 
