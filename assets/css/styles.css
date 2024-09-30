@@ -16,7 +16,7 @@ body {
 
 /* Header Styles */
 header {
-    background-color: #bfbff5; /* Light header color */
+    background-color: #cbcbf2; /* Light header color */
     padding: 1rem 0;
     position: sticky;
     top: 0;
@@ -223,4 +223,11 @@ footer {
   background-color: #f0fff0; 
   padding: 40px;
   border-radius: 8px;
+}
+
+/*separator for blog post */
+.post-separator {
+  border: none; 
+  border-top: 1px solid #ddd; 
+  margin: 20px 0;
 }
