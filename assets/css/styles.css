@@ -70,13 +70,13 @@ h1, h2, h3 {
     margin-bottom: 2rem;
 }
 
-.profile-photo {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 2rem;
-    border: 3px solid #3a506b;
+.profile-picture {
+  width: 100px; /* Adjust the size as needed */
+  height: 100px; /* Same as width for a square */
+  border-radius: 0; /* Remove rounded corners for a square */
+  object-fit: cover; /* Ensure the image covers the entire area */
+  float: right; /* Float the image to the right corner */
+  margin-left: 20px; /* Add some space between text and image */
 }
 
 /* Blog Section Styles */
