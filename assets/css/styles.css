@@ -256,12 +256,6 @@ footer {
   color: #eee; /* Light gray color for better contrast */
     
 
-.project-tile::before {
-  top: 0;
-  left: 0;
-  transform-origin: top left; 
-  transform: rotateX(-45deg); 
-}
 
 .project-tile:hover {
   background: linear-gradient(to bottom right, #333, #444); /* Slightly darker gradient on hover */
