@@ -287,6 +287,12 @@ footer {
 }
 
 /* background quote */
+
+.profile-container .content {
+  padding-left: 20px; /* Add left padding */
+  /* ... (other existing styles for the content div) ... */
+}
+
 .profile-container blockquote {
   background-color: transparent;
   border: none;
