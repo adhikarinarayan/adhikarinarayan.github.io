@@ -254,7 +254,12 @@ footer {
 
 .project-tile h3 { /* Target the project title (h3) */
   color: #eee; /* Light gray color for better contrast */
+/* ... other CSS rules ... */
 
+/* Center the "Projects" heading */
+#projects h1 { /* Assuming your heading is an h1 */
+  text-align: center; 
+}
 
 .project-tile::before {
   top: 0;
@@ -267,9 +272,6 @@ footer {
   background: linear-gradient(to bottom right, #333, #444); /* Slightly darker gradient on hover */
 }
 
-.project-tile:hover {
-  background-color: #333; 
-}
 
 .project-link {
   display: inline-block;
