@@ -12,7 +12,7 @@ title: About Me
 <div class="profile-container">
   <div class="content">
     <blockquote>
-      <p>"The only way to do great work is to love what you do." - Steve Jobs</p>
+      <p>"When something is important enough, you do it even if the odds are not in your favor" </p>
     </blockquote>
 
     <p>I am an AI enthusiast from India. I started as a physics student and pursued a master's degree in physics. Later, I became interested in computational physics and was eventually captivated by the fascinating world of data science and artificial intelligence.</p>
