@@ -1,0 +1,32 @@
+title: Narayan - Data Scientist & AI Researcher
+description: Personal portfolio and blog of Narayan, featuring research, blog posts, and recommendations.
+url: "https://yourusername.github.io"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+
+# Collections
+collections:
+  research:
+    output: true
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "research"
+    values:
+      layout: "research"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
