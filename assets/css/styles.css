@@ -242,15 +242,19 @@ footer {
 }
 
 .project-tile {
-  background-color: #444; /* Dark Gray */
+  background: linear-gradient(to bottom right, #444, #555); /* Subtle dark gradient */
   color: #fff; 
-  border: 1px solid #555; 
+  border: 1px solid #666; /* Slightly lighter border */
   padding: 20px;
   border-radius: 8px;
   text-align: center;
   position: relative; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
 }
 
+.project-tile h3 { /* Target the project title (h3) */
+  color: #eee; /* Light gray color for better contrast */
+}
 .project-tile::before,
 .project-tile::after {
   content: '';
@@ -275,9 +279,8 @@ footer {
   transform: rotateX(45deg); 
 }
 
-.project-tile:hover::before,
-.project-tile:hover::after {
-  transform: rotateX(0deg); 
+.project-tile:hover {
+  background: linear-gradient(to bottom right, #333, #444); /* Slightly darker gradient on hover */
 }
 
 .project-tile:hover {
