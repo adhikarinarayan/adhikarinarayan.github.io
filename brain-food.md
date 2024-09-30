@@ -15,14 +15,17 @@ title: Brain Food
   <div class="column-right">
     <h2>Books I Enjoyed</h2>
     <ul>
-      <li>**Book Title 1** by Author (Year)</li>
-      <li>**Book Title 2** by Author (Year)</li>
+      <li>Three Body Problem Trilogy by Liu Cixin</li>
+      <li>The Last Question by Isaac Asimov</li>
+      <li>Dark Matter by Blake Crouch</li>
+      <li>Crime and Punishment by Fyodor Dostoevsky</li>
+      <li>Norwegian Wood by Haruki Murakami</li>
       </ul>
 
-    <h2>Music I Enjoy</h2>
+    <h2>TBA</h2>
     <ul>
-      <li>Artist - Song/Album</li>
-      <li>Artist - Song/Album</li>
+      <li>Artist -</li>
+      <li>Artist -</li>
       </ul>
   </div>
 </div>
