@@ -287,15 +287,16 @@ footer {
 }
 
 /* background quote */
-.about-section blockquote {
-  background-color: transparent; /* Remove background color */
-  border: none; /* Remove border */
-  margin: 30px 0; /* Keep margins for spacing */
-  padding: 0; /* Remove padding */
+.profile-container blockquote {
+  background-color: transparent;
+  border: none;
+  margin: 30px 0; 
+  padding: 0; 
   font-style: italic;
-  text-align: center; /* Center the quote (optional) */
+  text-align: center; 
+  color: red; /* Add this line to set the quote color to red */
 }
 
-.about-section blockquote p {
-  margin-bottom: 0; /* Remove default bottom margin */
+.profile-container blockquote p {
+  margin-bottom: 0; 
 }
