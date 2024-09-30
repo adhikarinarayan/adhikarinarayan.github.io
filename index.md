@@ -22,13 +22,13 @@ title: About Me
 
   <div class="bottom-social">
     <div class="social-buttons">
-        <a href="https://github.com/your-github-username" class="button github-button">
+        <a href="https://github.com/adhikarinarayan" class="button github-button">
             <i class="fab fa-github"></i> GitHub 
         </a>
-        <a href="https://www.linkedin.com/in/your-linkedin-profile" class="button">
+        <a href="https://www.linkedin.com/in/adhikarinarayan/" class="button">
             <i class="fab fa-linkedin"></i> LinkedIn
         </a>
-        <a href="mailto:your.email@example.com" class="button">
+        <a href="mailto:n.adhikari2010@example.com" class="button">
             <i class="fas fa-envelope"></i> Email
         </a>
     </div>
