@@ -273,7 +273,8 @@ footer {
 
 .brain-food-container {
   display: flex;
-  gap: 20px; /* Space between columns */
+  gap: 35px; /* Space between columns */
+  justify-content: center; /* Center the columns horizontally */
 }
 
 .column-left, .column-right {
@@ -283,4 +284,18 @@ footer {
 .column-right ul {
   list-style-type: none; /* Remove bullet points for books and music */
   padding: 0;
+}
+
+/* background quote */
+.about-section blockquote {
+  background-color: transparent; /* Remove background color */
+  border: none; /* Remove border */
+  margin: 30px 0; /* Keep margins for spacing */
+  padding: 0; /* Remove padding */
+  font-style: italic;
+  text-align: center; /* Center the quote (optional) */
+}
+
+.about-section blockquote p {
+  margin-bottom: 0; /* Remove default bottom margin */
 }
