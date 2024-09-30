@@ -288,15 +288,10 @@ footer {
 
 /* background quote */
 
-.profile-container .content {
-  padding-left: 20px; /* Add left padding */
-  /* ... (other existing styles for the content div) ... */
-}
-
 .profile-container blockquote {
   background-color: transparent;
   border: none;
-  margin: 30px 0 50px 0; /* Increased bottom margin */
+  margin: 10px 0 80px 0; /* Reduced top margin to 10px, bottom margin at 80px */
   padding: 0; 
   font-style: italic;
   text-align: center; 
