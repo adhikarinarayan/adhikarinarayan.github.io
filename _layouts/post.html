@@ -3,5 +3,6 @@ layout: default
 ---
 
 <article class="blog-post">
+  <p class="post-meta">Posted on {{ page.date | date: "%B %d, %Y" }} in {{ page.categories | join: ", " }}</p> 
   {{ content }} 
 </article>
