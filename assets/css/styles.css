@@ -3,7 +3,7 @@ body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #f4f4f4;
+    background-color: #f8f9fa; /* Lighter background */
     margin: 0;
     padding: 0;
 }
@@ -16,7 +16,7 @@ body {
 
 /* Header Styles */
 header {
-    background-color: #3a506b;
+    background-color: #f0f0f5; /* Light header color */
     padding: 1rem 0;
     position: sticky;
     top: 0;
@@ -37,7 +37,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #ffffff;
+    color: #333; /* Darker text for contrast */
     font-weight: bold;
     transition: color 0.3s ease;
 }
@@ -145,8 +145,10 @@ article:hover {
 footer {
     text-align: center;
     padding: 1rem;
-    background-color: #3a506b;
-    color: #ffffff;
+    background-color: #f0f0f5; /* Light footer color */
+    color: #333; /* Darker text for contrast */
+    width: 80%; /* Reduced width */
+    margin: 0 auto; /* Center the footer */
 }
 
 /* Responsive Design */
