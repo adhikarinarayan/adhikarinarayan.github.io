@@ -11,6 +11,11 @@ title: About Me
 
 <div class="profile-container">
     <div class="content">
+           <blockquote>
+          <p>"The only way to do great work is to love what you do." - Steve Jobs</p>
+        </blockquote> 
+        </div>
+</div>
         <h1>About Me</h1>
         <p>I am an AI enthusiast from India. I started as a physics student and pursued a master's degree in physics. Later, I became interested in computational physics and was eventually captivated by the fascinating world of data science and artificial intelligence.</p>
 <ul>
