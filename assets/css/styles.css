@@ -274,10 +274,10 @@ footer {
 .project-link {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #007bff; /* Blue button color */
+  background-color: #83a5c9; /* Blue button color */
   color: #fff;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 5px; /* Rounded corners for button shape */
   margin-top: 15px;
 }
 
