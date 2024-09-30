@@ -269,13 +269,11 @@ footer {
 
 
 .project-link {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #f2f0f0;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
-  margin-top: 15px;
-  border: 2px solid #fff; /* White border */
+  color: #fff; /* Light blue default color */
+  text-decoration: none; /* Remove underline */
+}
+
+.project-link:hover {
+  color: #2196F3; /* Darker blue on hover */
 }
 
