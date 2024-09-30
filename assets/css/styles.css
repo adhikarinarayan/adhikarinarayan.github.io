@@ -237,46 +237,30 @@ footer {
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust minmax for tile size */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
   grid-gap: 20px; 
 }
 
 .project-tile {
-  background: linear-gradient(to bottom right, #444, #555); /* Subtle dark gradient */
+  background-color: #444; /* Dark Gray */
   color: #fff; 
-  border: 1px solid #666; /* Slightly lighter border */
+  border: 1px solid #555; 
   padding: 20px;
   border-radius: 8px;
   text-align: center;
-  position: relative; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
+  /* Removed position: relative; */ 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
 }
 
 .project-tile h3 { /* Target the project title (h3) */
   color: #eee; /* Light gray color for better contrast */
-}
-.project-tile::before,
-.project-tile::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 10px; 
-  background-color: #333; /* Slightly darker than tile background */
-  transition: transform 0.3s ease; 
-}
+
 
 .project-tile::before {
   top: 0;
   left: 0;
   transform-origin: top left; 
   transform: rotateX(-45deg); 
-}
-
-.project-tile::after {
-  bottom: 0;
-  right: 0;
-  transform-origin: bottom right;
-  transform: rotateX(45deg); 
 }
 
 .project-tile:hover {
