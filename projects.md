@@ -3,8 +3,6 @@ layout: default
 title: Projects
 ---
 
-# Projects
-
 <div class="project-grid"> 
   <div class="project-tile">
     <h3>Project Title 1</h3>
