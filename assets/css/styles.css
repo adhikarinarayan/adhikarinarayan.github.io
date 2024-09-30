@@ -1,34 +1,45 @@
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     line-height: 1.6;
     color: #333;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-    background-color: #f0f4f8;
 }
 
 /* Header Styles */
 header {
     background-color: #3a506b;
-    padding: 1rem;
+    padding: 1rem 0;
     position: sticky;
     top: 0;
     z-index: 100;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 nav ul {
     list-style-type: none;
     padding: 0;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
 }
 
 nav ul li a {
     text-decoration: none;
     color: #ffffff;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
@@ -38,15 +49,14 @@ nav ul li a:hover {
 /* Main Content Styles */
 main {
     padding: 2rem 0;
-    position: relative;
 }
 
 section {
-    margin-bottom: 3rem;
     background-color: #ffffff;
+    margin-bottom: 2rem;
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 h1, h2, h3 {
@@ -54,63 +64,49 @@ h1, h2, h3 {
 }
 
 /* About Section Styles */
+.profile-container {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+}
+
 .profile-photo {
-    max-width: 150px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
-    position: absolute;
-    top: 20px;
-    right: 20px;
+    object-fit: cover;
+    margin-right: 2rem;
     border: 3px solid #3a506b;
 }
 
 /* Blog Section Styles */
 article {
     background-color: #f8f9fa;
-    padding: 1rem;
-    margin-bottom: 1rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
     border-radius: 5px;
+    transition: transform 0.3s ease;
 }
 
-/* Recommendations Section Styles */
-.recommendations-container {
-    display: flex;
-    justify-content: space-between;
+article:hover {
+    transform: translateY(-5px);
 }
 
-.music-recommendations, .book-recommendations {
-    flex-basis: 48%;
-}
-
-/* Projects Section Styles (formerly Research) */
+/* Projects Section Styles */
 #projects article {
     border-left: 4px solid #3a506b;
-    padding-left: 1rem;
+    padding-left: 1.5rem;
 }
 
 /* Recommendations Section Styles */
-.recommendations-container {
-    display: flex;
-    flex-direction: column;
-}
-
-.resources-i-like, .music-recommendations, .book-recommendations {
+.recommendations-container > div {
     margin-bottom: 2rem;
-}
-
-/* Footer Styles */
-footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #3a506b;
-    color: #ffffff;
-    margin-top: 2rem;
 }
 
 /* Social Buttons Styles */
 .social-buttons {
     display: flex;
-    justify-content: flex-start;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
 }
 
 .button {
@@ -120,7 +116,11 @@ footer {
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button:hover {
+    transform: translateY(-2px);
 }
 
 .linkedin-button {
@@ -141,20 +141,32 @@ footer {
     background-color: #B23121;
 }
 
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #3a506b;
+    color: #ffffff;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
-    .recommendations-container {
+    .profile-container {
         flex-direction: column;
-    }
-    
-    .music-recommendations, .book-recommendations {
-        flex-basis: 100%;
-        margin-bottom: 1rem;
+        align-items: center;
     }
 
     .profile-photo {
-        position: static;
-        display: block;
-        margin: 0 auto 1rem;
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
     }
 }
