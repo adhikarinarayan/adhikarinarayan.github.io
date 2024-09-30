@@ -73,12 +73,12 @@ h1, h2, h3 {
 .profile-picture {
   width: 150px; /* Adjust the size as needed */
   height: 150px; /* Same as width for a square */
-  border-radius: 0; /* Remove rounded corners for a square */
+  border-radius: 5px; /* Remove rounded corners for a square */
   object-fit: cover; /* Ensure the image covers the entire area */
   float: right; /* Float the image to the right corner */
   margin-left: 20px; /* Add some space between text and image */
   margin-right: 20px; /* Add margin to the right to prevent sticking to the border */
-  margin-top: 20px; /* Add margin to the top to create some spacing from the top */ 
+  margin-top: 10px; /* Add margin to the top to create some spacing from the top */ 
 }
 /* Blog Section Styles */
 article {
@@ -206,7 +206,7 @@ footer {
 
 .button:hover {
     transform: translateY(-2px);
-    background-color: #f0f0f5;  
+    background-color: #941c4c;  
 }
 
 .github-button {
