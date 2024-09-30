@@ -3,6 +3,7 @@ layout: default
 ---
 
 <article class="blog-post">
+  <div class="post-content">{{ content }} </div>
+  <hr class="post-separator">
   <p class="post-meta">Posted on {{ page.date | date: "%B %d, %Y" }} in {{ page.categories | join: ", " }}</p> 
-  <hr class="post-separator"> <div class="post-content">{{ content }} </div>
 </article>
