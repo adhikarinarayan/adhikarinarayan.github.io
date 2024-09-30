@@ -273,7 +273,7 @@ footer {
 
 .brain-food-container {
   display: flex;
-  gap: 35px; /* Space between columns */
+  gap: 45px; /* Space between columns */
   justify-content: center; /* Center the columns horizontally */
 }
 
@@ -281,12 +281,24 @@ footer {
   flex: 1; /* Columns take equal width */
 }
 
+
+.column-left h2 { /* Target the "Interesting Sites" heading */
+  padding-left: 20px; /* Add left padding */
+}
+
 .column-right ul {
   list-style-type: none; /* Remove bullet points for books and music */
   padding: 0;
 }
 
+
+
 /* background quote */
+
+
+.profile-container .content {
+  padding-left: 20px; /* Add left padding */
+}
 
 .profile-container blockquote {
   background-color: transparent;
