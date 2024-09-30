@@ -1,5 +1,5 @@
 title: Narayan - Data Scientist & AI Researcher
-description: Personal portfolio and blog of Narayan, featuring research, blog posts, and recommendations.
+description: Personal portfolio and blog of Narayan, featuring projects, blog posts, and recommendations.
 url: "https://yourusername.github.io"
 baseurl: ""
 
@@ -11,7 +11,7 @@ plugins:
 
 # Collections
 collections:
-  research:
+  projects:
     output: true
 
 # Default front matter
@@ -23,9 +23,9 @@ defaults:
       layout: "post"
   - scope:
       path: ""
-      type: "research"
+      type: "projects"
     values:
-      layout: "research"
+      layout: "project"
   - scope:
       path: ""
     values:
