@@ -15,7 +15,6 @@ title: About Me
       <p>"The only way to do great work is to love what you do." - Steve Jobs</p>
     </blockquote>
 
-    <h1>About Me</h1> 
     <p>I am an AI enthusiast from India. I started as a physics student and pursued a master's degree in physics. Later, I became interested in computational physics and was eventually captivated by the fascinating world of data science and artificial intelligence.</p>
 
     <ul>
