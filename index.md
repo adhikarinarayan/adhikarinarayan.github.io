@@ -12,17 +12,13 @@ title: About Me
 <div class="profile-container">
   <div class="content">
     <blockquote>
-      <p>"When something is important enough, you do it even if the odds are not in your favor" </p>
+      <p>"When something is important enough, you do it even if the odds are not in your favor"</p>
     </blockquote>
-
-    <p>I am an AI enthusiast from India. I started as a physics student and pursued a master's degree in physics. Later, I became interested in computational physics and was eventually captivated by the fascinating world of data science and artificial intelligence.</p>
-
-    <ul>
-      <li>🔭 I am currently working on NLP projects, specifically related to fine-tuning language models and using RAG for chatbots at a Stealth startup.</li>
-      <li>⚡  I love chatting about new books, exploring philosophical issues related to AI, talking about cricket, and sharing music recommendations.</li>
-      <li>👨‍🏫I have given talks on topics related to my work, and you can find slides from these talks/lectures <a href="https://github.com/adhikarinarayan/talks">here</a></li>
-      <li>📫 If you have any questions related to my projects or any interesting ideas to discuss, feel free to reach out to me.</li>
-    </ul>
+    <p>
+      I'm an AI enthusiast from India with a background in physics. I completed my BSc in Physics, Chemistry, and Mathematics from Kumaun University, followed by an MSc in Physics from IIT Ropar. My journey began in physics, but I gradually became interested in computational physics, which led me to explore data science and artificial intelligence. Currently, I'm working at a stealth startup as a data scientist on NLP projects. My focus is on fine-tuning language models and implementing RAG (Retrieval-Augmented Generation) for chatbots. My main areas of interest include RAG, AI agents, and AI for good. At work, I'm passionate about developing AI solutions that can make a positive impact. 
+     <p> 
+Outside of work, I enjoy discussing new books, exploring philosophical questions related to AI, talking about cricket, and sharing music recommendations. In my free time, you can often find me playing cricket or volleyball. I've given talks on topics related to my work, and you can find the slides from these presentations <a href="https://github.com/adhikarinarayan/talks">here</a>. If you're interested in my projects or have any ideas you'd like to discuss, feel free to contact me.
+    </p>
   </div> 
 </div>
 
