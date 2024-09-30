@@ -269,3 +269,18 @@ footer {
   color: #2196F3; 
 }
 
+/* brain food */
+
+.brain-food-container {
+  display: flex;
+  gap: 20px; /* Space between columns */
+}
+
+.column-left, .column-right {
+  flex: 1; /* Columns take equal width */
+}
+
+.column-right ul {
+  list-style-type: none; /* Remove bullet points for books and music */
+  padding: 0;
+}
