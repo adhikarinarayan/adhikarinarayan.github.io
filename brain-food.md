@@ -6,8 +6,9 @@ title: Brain Food
   <div class="column-left">
     <h2>Interesting Sites</h2>
     <ul>
-      <li><a href="https://example.com">Website Name 1</a> - Brief description.</li>
-      <li><a href="https://example.com">Website Name 2</a> - Brief description.</li>
+      <li><a href="https://plato.stanford.edu/index.html">Stanford Encyclopedia of Philosophy </a> </li>
+      <li><a href="https://www.scottaaronson.com/democritus">QC since democritus</a> </li>
+      <li><a href="https://paulgraham.com/articles.html">PG Essays 2</a> </li>
       </ul>
   </div>
 
