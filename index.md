@@ -3,10 +3,14 @@ layout: default
 title: About Me
 ---
 
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> 
+</head>
+
 <div class="profile-container">
     <div class="content">
         <h1>About Me</h1>
-        <p>I am an AI enthusiast from India. I started as a physics student and pursued a master&#39;s degree in physics. Later, I became interested in computational physics and was eventually captivated by the fascinating world of data science and artificial intelligence.</p>
+        <p>I am an AI enthusiast from India. I started as a physics student and pursued a master's degree in physics. Later, I became interested in computational physics and was eventually captivated by the fascinating world of data science and artificial intelligence.</p>
 <ul>
 <li>🔭 I am currently working on NLP projects, specifically related to fine-tuning language models and using RAG for chatbots at a Stealth startup.</li>
 <li>⚡  I love chatting about new books, exploring philosophical issues related to AI, talking about cricket, and sharing music recommendations.</li>
@@ -15,7 +19,7 @@ title: About Me
 </ul>
 
         <div class="social-buttons">
-            <a href="https://www.linkedin.com/in/your-profile" class="button linkedin-button">
+            <a href="https://www.linkedin.com/in/your-linkedin-profile" class="button linkedin-button">
                 <i class="fab fa-linkedin"></i> LinkedIn
             </a>
             <a href="mailto:your.email@example.com" class="button email-button">
