@@ -71,14 +71,14 @@ h1, h2, h3 {
 }
 
 .profile-picture {
-  width: 200px; /* Adjust the size as needed */
-  height: 200px; /* Same as width for a square */
+  width: 250px; /* Adjust the size as needed */
+  height: 250px; /* Same as width for a square */
   border-radius: 5px; /* Remove rounded corners for a square */
   object-fit: cover; /* Ensure the image covers the entire area */
   float: right; /* Float the image to the right corner */
   margin-left: 20px; /* Add some space between text and image */
   margin-right: 20px; /* Add margin to the right to prevent sticking to the border */
-  margin-top: 5px; /* Add margin to the top to create some spacing from the top */ 
+  margin-top: 2px; /* Add margin to the top to create some spacing from the top */ 
 }
 /* Blog Section Styles */
 article {
