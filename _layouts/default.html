@@ -8,22 +8,26 @@
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="{{ '/' | relative_url }}">About</a></li>
-                <li><a href="{{ '/blog' | relative_url }}">Blog</a></li>
-                <li><a href="{{ '/projects' | relative_url }}">Projects</a></li>
-                <li><a href="{{ '/recommendations' | relative_url }}">Recommendations</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="{{ '/' | relative_url }}">About</a></li>
+                    <li><a href="{{ '/blog' | relative_url }}">Blog</a></li>
+                    <li><a href="{{ '/projects' | relative_url }}">Projects</a></li>
+                    <li><a href="{{ '/recommendations' | relative_url }}">Recommendations</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main>
+    <main class="container">
         {{ content }}
     </main>
 
     <footer>
-        <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
+        <div class="container">
+            <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
+        </div>
     </footer>
 </body>
 </html>
