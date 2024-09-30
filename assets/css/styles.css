@@ -175,3 +175,45 @@ footer {
         margin: 10px 0;
     }
 }
+
+.bottom-social {
+  position: fixed; 
+  bottom: 0; 
+  left: 50%;
+  transform: translateX(-50%); 
+  width: 100%;
+  text-align: center;
+  background-color: #f0f0f5; 
+  padding: 10px 0; 
+}
+
+.bottom-social .social-buttons {
+  display: inline-block; 
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+    border: 2px solid #000; /* Set default border color to black */
+    background-color: transparent; 
+    color: #000; /* Set default text color to black */
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    background-color: #f0f0f5;  
+}
+
+.github-button {
+    border-color: #333; /* Set GitHub button border color (dark gray) */
+    color: #333; /* Set GitHub button text color (dark gray) */
+}
+
+.github-button:hover {
+    color: #fff; /* Optional: Change text color on hover */
+}
