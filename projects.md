@@ -5,9 +5,9 @@ title: Projects
 
 <div class="project-grid"> 
   <div class="project-tile">
-    <h3>Project Title 1</h3>
-    <p>Brief description of Project 1.</p>
-    <a href="https://github.com/your-username/repo1" class="project-link">View on GitHub</a> </div>
+    <h3>BudgetBot</h3>
+    <p>LLM-powered chatbot that leverages RAG architecture to provide answers to questions related to Budget of Uttarakhand.</p>
+    <a href="https://github.com/adhikarinarayan/BudgetBot">View on GitHub</a> </div>
 
   <div class="project-tile">
     <h3>Enhancing Legal Research and Prediction through AI-Powered Case Law Analysis</h3>
