@@ -14,7 +14,7 @@ title: Brain Food
 
   <div class="column-right">
     <h2>Books I Enjoyed</h2>
-    <ul>
+    <ul> 
       <li>Three Body Problem Trilogy by Liu Cixin</li>
       <li>The Last Question by Isaac Asimov</li>
       <li>Stories of Your Life by Ted Chiang</li>
