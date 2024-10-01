@@ -17,6 +17,7 @@ title: Brain Food
     <ul>
       <li>Three Body Problem Trilogy by Liu Cixin</li>
       <li>The Last Question by Isaac Asimov</li>
+      <li>Stories of Your Life by Ted Chiang</li>
       <li>Dark Matter by Blake Crouch</li>
       <li>Crime and Punishment by Fyodor Dostoevsky</li>
       <li>Norwegian Wood by Haruki Murakami</li>
