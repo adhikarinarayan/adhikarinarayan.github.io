@@ -7,13 +7,7 @@ excerpt: "What is a Tensor? This is a question that is usually discussed in math
 For a physicist - A tensor is a mathematical object that can be used to describe a physical quantity. "
 ---
 
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Understanding Tensors: The Building Blocks of AI</title>
-</head>
 <body>
-  <h1>Understanding Tensors: The Building Blocks of AI</h1>
 
   <p>What is a Tensor? This is a question that is usually discussed in mathematics or physics lectures. With the advent of neural networks, we can see its prominence in the field of AI as well..</p>
   <p>For a physicist - Tensor is a mathematical object that can be used to describe a physical quantity. Vectors and Scalars are just special cases of tensors. They can be covariant or contravariant. They have some special transformation rules too. But we are not heading towards a course in General relativity, Hence In our discussion, we will look into tensors simply as a multidimensional array.
