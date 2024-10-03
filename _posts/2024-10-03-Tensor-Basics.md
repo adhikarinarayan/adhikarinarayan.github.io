@@ -3,7 +3,7 @@ layout: post
 title: "Understanding Tensors"
 date: 2024-10-03
 categories: Maths AI
-excerpt: "What is a Tensor? This is a question that is usually discussed in mathematics or physics lectures. With the advent of neural networks, we can see its prominence in the field of AI as well..
+excerpt: "What is a Tensor? This is a question that is usually discussed in mathematics or physics lectures. With the advent of neural networks, we can see its prominence in the field of AI as well.
 For a physicist - A tensor is a mathematical object that can be used to describe a physical quantity. "
 ---
 
@@ -23,6 +23,7 @@ Suppose m = 2, n = 1, then it will have 2 components and 1 index. Suppose m = 2 
 Actually vector and scalar are also tensors. Vector is tensor of rank 1, it can be represented by a column. Scalar is a tensor of rank 0, it is represented by a number.
 If we take n=2,m=2, it will have 4 components. Also, it will have two indices for each component. Surely we don't have a name for it. But its representation looks familiar.
 It is a matrix.
+
 $$
 A_{i,j} = \begin{bmatrix}  
 a_{11} & a_{12}\\  
@@ -94,9 +95,9 @@ $$A \otimes B = A*B^T= \begin{bmatrix}
 \end{bmatrix} $$ 
 Here the order of product is 2.
 
-Similarly, we can extend this process to higher order tensors of p-th and q-th order.
+Similarly, we can extend this process to higher-order tensors of p-th and q-th order.
 
-$$(A ⊗ B)_{i1...ip j1...jq} = A_{i1...ip} * B{j1...jq}$$
+$$(A ⊗ B)_{i1...ip, j1...jq} = A_{i1...ip} * B_{j1...jq}$$
 
 
 
