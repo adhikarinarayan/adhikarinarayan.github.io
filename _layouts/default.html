@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
     <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']],
+          processEscapes: true, 
+          processEnvironments: true
+        }
+      });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> 
 </head>
 <body>
     <header>
@@ -13,7 +25,7 @@
                 <li><a href="{{ '/' | relative_url }}">About</a></li>
                 <li><a href="{{ '/blog' | relative_url }}">Blog</a></li>
                 <li><a href="{{ '/projects' | relative_url }}">Projects</a></li>
-                 <li><a href="{{ '/brain-food' | relative_url }}">Brain Food</a></li> 
+                <li><a href="{{ '/brain-food' | relative_url }}">Brain Food</a></li> 
             </ul>
         </nav>
     </header>
