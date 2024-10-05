@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Blog
+title: Recent Posts 
 ---
 
-# Blog
+<div class="projects-title"> <h1> Recent Posts </h1> </div>
 
 {% for post in site.posts %}
   <article>
