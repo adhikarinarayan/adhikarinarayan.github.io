@@ -42,7 +42,7 @@ Example:
 A 256x256 RGB image is a tensor of shape (256,256,3).  
 However, a 256x256 grayscale image is a tensor of shape (256,256) since its color channel value is zero for all pixels.  
 <p align="center">
- <img src="https://raw.githubusercontent.com/adhikarinarayan/adhikarinarayan.github.io/refs/heads/main/assets/images/3dtensor.svg" alt="3dtensor">
+ <img src="https://raw.githubusercontent.com/adhikarinarayan/adhikarinarayan.github.io/refs/heads/main/assets/images/3dtensorr.svg" alt="3dtensor">
 </p>
 
 
