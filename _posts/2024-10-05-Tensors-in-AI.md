@@ -3,8 +3,8 @@ layout: post
 title: "Tensors and AI"
 date: 2024-10-05
 categories: Maths AI
-excerpt: "After publishing his groundbreaking papers on the special theory of relativity and the photoelectric effect in his  "miracle year" of 1905, Einstein began developing the general theory of relativity, extending the principles of special relativity to include gravity and accelerated frames of reference.  
-Tensor and differential geometry are two mathematical tools heavily used in general relativity."
+excerpt: "Tensor and differential geometry are two mathematical tools heavily used in general relativity.  
+Starting from 1916, in his equations Einstein began to use a rule to make his calculations more clear and concise "
 ---
 
 > "I have made a great discovery in mathematics; I have suppressed the summation sign every time that the summation must be made over an index which occurs twice..." - Albert Einstein
