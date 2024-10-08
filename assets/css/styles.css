@@ -94,7 +94,7 @@ article h2 {  /* Target h2 within article */
 
 .read-more-link {
   display: inline-block; /* Make the link a block element to apply margin */
-  margin-bottom: 5px; /* Adjust the value as needed */
+  margin-bottom: 2px; /* Adjust the value as needed */
 }
 
 article:hover {
