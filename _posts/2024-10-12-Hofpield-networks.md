@@ -9,7 +9,11 @@ excerpt: "The Nobel Prize in Physics 2024 was awarded jointly to John J. Hopfiel
 
 
 
-<img title="Nobel" alt="Alt text" src="https://miro.medium.com/v2/resize:fit:786/format:webp/1*_ziP-j1yel5W0hdftUKlbA.jpeg">
+
+<p align="center">
+ <img src="https://miro.medium.com/v2/resize:fit:786/format:webp/1*_ziP-j1yel5W0hdftUKlbA.jpeg" alt="nobel"  width="600" height="400">
+</p>
+
 
 > The Nobel Prize in Physics 2024 was awarded jointly to John J. Hopfield and Geoffrey E. Hinton "for foundational discoveries and inventions that enable machine learning with artificial neural networks" - Nobel Prize Committee, Royal Swedish Academy of Sciences
 
@@ -37,8 +41,11 @@ Where $w_{ij}$  is the weight of neuron i to neuron j. If $x_i ,x_j$  have same 
 
 Let us understand this by an example. Let us say we have 3 neurons and they have some pattern as shown in the figure below.
 
-<img title="example" alt="Alt text" src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*Fn1i9HpssbPMBdhAL4svJQ.png">
 
+
+<p align="center">
+ <img src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*Fn1i9HpssbPMBdhAL4svJQ.png" alt="example" >
+</p>
 
 We can use the Hebbian rule to calculate the weight of each pair of neurons. Each pattern can be represented with a vector, and the entire weight matrix can be computed by taking the outer product.
 
