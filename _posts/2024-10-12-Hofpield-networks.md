@@ -93,8 +93,10 @@ where-
 - $s_i(t+1)$: The state of neuron i at the next time step.
 - $\theta_i$ is the bias term for neuron i
 
-This update rule minimizes the Energy function E -
+This update rule minimizes the Energy function:
+
 $$E =-\frac{1}{2} \sum^{d}_{i=1}\sum^{d}_{j=1} x_i w_{ij}x_j -\sum^{d}_{i=1}\theta_ix_i\;\;, i\neq j$$
+
 $$E =-\frac{1}{2} \sum_{i\neq j}\sum \textbf{X}^T W_{ij} \textbf{X} - \Theta \textbf{x}$$
 
 It is also known as Hopfield energy. The update rule can be derived from Hopfield energy using gradient descent.  
@@ -105,7 +107,7 @@ We can iteratively update it until it converges — i.e. $x(t+1)=x(t)$
 To demonstrate the learning process, we start with two images (patterns) as shown below and then train them using Hopfield networks. Pattern 1 represents the letter "L" and Pattern 2 represents the letter "I."
 Once the learning process is finished, the Hopfield network can retrieve the closest pattern to a given noisy pattern.
 
-The code used to generate this example can be found here: [insert link].
+The code used to generate this example can be found [here](https://github.com/adhikarinarayan/talks/blob/main/hopfield.ipynb).
 
 ## Connection with Physics
 The energy function mentioned above is strikingly similar to the Ising model in statistical mechanics.  
@@ -113,7 +115,7 @@ In his seminal paper of 1982, Hopfield mentioned: “This case (symmetric case) 
 
 In Physics, the Ising model is the simplest model for ferromagnetism. We consider a lattice, and each point in that lattice has a spin (+1 or -1).
 
-The Hamiltonian for the Ising model can be written as : -
+The Hamiltonian for the Ising model can be written as: -
 
 $$H = - \sum_{<ij>} J_{ij} \sigma_i \sigma_i + \sum_j h_j \sigma_j $$
 
