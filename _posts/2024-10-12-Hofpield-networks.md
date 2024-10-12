@@ -135,4 +135,4 @@ The Hopfield networks, while quite basic and with several limitations such as is
 1. [Hopfield network — Wikipedia](https://en.wikipedia.org/wiki/Hopfield_network#Hebbian_learning_rule_for_Hopfield_networks)
 2. [Hopfield Networks — Notes on AI](https://notesonai.com/hopfield+networks)
 3. [Hopfield Networks - YouTube](https://www.youtube.com/watch?v=81B-ESqgCjs&ab_channel=JeffOrchard)
-4. [Hopfield Networks is All You Need | hopfield-layers (ml-jku.github.io)](https://ml-jku.github.io/hopfield-layers/)
+4. [Hopfield Networks is All You Need](https://ml-jku.github.io/hopfield-layers/)
