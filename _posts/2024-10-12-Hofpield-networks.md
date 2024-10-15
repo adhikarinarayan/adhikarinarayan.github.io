@@ -17,7 +17,7 @@ excerpt: "The Nobel Prize in Physics 2024 was awarded jointly to John J. Hopfiel
 
 > The Nobel Prize in Physics 2024 was awarded jointly to John J. Hopfield and Geoffrey E. Hinton "for foundational discoveries and inventions that enable machine learning with artificial neural networks" - Nobel Prize Committee, Royal Swedish Academy of Sciences
 
-The Nobel Prize decision for physics this year surprised many people. The connection between the work of Hopfield and Hinton and the field of physics may not be immediately obvious. Hinton, often referred to as the godfather of physics, developed the concept of Boltzmann machines based on Hopfield's ideas. While Hinton has made numerous contributions to the field of AI, the Nobel committee recognized this particular idea as being significant for the Nobel Prize in physics. On the other hand, Hopfield, a physicist by training, has made contributions spanning from physics to neuroscience to AI. In this article, I will explore Hopfield's idea - the Hopfield network - which led to the Nobel Prize in physics. I will demonstrate how he elegantly applied this idea from physics to the human brain, thereby advancing the field of neural networks and AI.
+The Nobel Prize decision for physics this year surprised many people. The connection between the work of Hopfield and Hinton and the field of physics may not be immediately obvious. Hinton, often referred to as the 'godfather of AI', developed the concept of Boltzmann machines based on Hopfield's ideas. While Hinton has made numerous contributions to the field of AI, the Nobel committee recognized this particular idea as being significant for the Nobel Prize in physics. On the other hand, Hopfield, a physicist by training, has made contributions spanning from physics to neuroscience to AI. In this article, I will explore Hopfield's idea - the Hopfield network - which led to the Nobel Prize in physics. I will demonstrate how he elegantly applied this idea from physics to the human brain, thereby advancing the field of neural networks and AI.
 
 ## Hopfield Networks
 
@@ -104,10 +104,10 @@ We can iteratively update it until it converges — i.e. $x(t+1)=x(t)$
 
 ### Example
 
-To demonstrate the learning process, we start with two images (patterns) as shown below and then train them using Hopfield networks. Pattern 1 represents the letter "L" and Pattern 2 represents the letter "I."
+To demonstrate the learning process, we start with two images (patterns) as shown in the code below and then train them using Hopfield networks. Pattern 1 represents the letter "T" and Pattern 2 represents the letter "I."
 Once the learning process is finished, the Hopfield network can retrieve the closest pattern to a given noisy pattern.
 
-The code used to generate this example can be found [here](https://github.com/adhikarinarayan/talks/blob/main/hopfield.ipynb).
+The code example can be found [here](https://github.com/adhikarinarayan/talks/blob/main/hopfield.ipynb).
 
 ## Connection with Physics
 The energy function mentioned above is strikingly similar to the Ising model in statistical mechanics.  
@@ -128,7 +128,7 @@ where -
 It is similar to the energy function of the Hopfield energy function. Spin can be thought of as analogous to the state of a neuron, and interaction strength is similar to the weight matrix, and so on.
 ## Significance of Hopfield networks
 
-The Hopfield networks, while quite basic and with several limitations such as issues with overlapping patterns, have played a significant role in the advancement of AI and neural networks. They served as early models of associative memory and laid the foundation for later models such as Boltzmann machines. Hopfield networks were important in unsupervised learning because, in unsupervised learning, we don’t have outputs and hence no loss function. Therefore, their energy minimization-based approaches are very useful.
+The Hopfield networks, while quite basic and with several limitations such as issues with overlapping patterns, have played a significant role in the advancement of AI and neural networks. They served as early models of associative memory and laid the foundation for later models such as Boltzmann machines. Hopfield networks were important in unsupervised learning because we don’t have outputs and hence have no loss function. Therefore, their energy minimization-based approaches are very useful.
 
 ## References:
 
