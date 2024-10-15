@@ -4,7 +4,7 @@ title: Recent Posts
 ---
 
 
-<div class="blog-heading"> <h1> My Thoughts </h1> </div>
+<div class="blog-heading"> <h1> Posts </h1> </div>
 
 {% for post in site.posts %}
   <article>
