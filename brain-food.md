@@ -16,6 +16,7 @@ title: Brain Food
   <div class="column-right">
     <h2>Books I Enjoyed</h2>
     <ul> 
+      <li>The Brothers Karamazov by Fyodor Dostoevsky</li>
       <li>Three Body Problem Trilogy by Liu Cixin</li>
       <li>The Last Question by Isaac Asimov</li>
       <li>Stories of Your Life by Ted Chiang</li>
@@ -26,7 +27,6 @@ title: Brain Food
 
     <h2>TBA</h2>
     <ul>
-      <li>Artist -</li>
       <li>Artist -</li>
       </ul>
   </div>
