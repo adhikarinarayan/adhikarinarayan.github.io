@@ -15,10 +15,11 @@ title: About Me
       <p>"When something is important enough, you do it even if the odds are not in your favor"</p>
     </blockquote>
     <p>
-      I'm an AI enthusiast from India with a background in physics. I completed my BSc in Physics, Chemistry, and Mathematics from Kumaun University, followed by an MSc in Physics from IIT Ropar. My journey began in physics, but I gradually became interested in computational physics, which led me to explore data science and artificial intelligence. Currently, I'm working at a stealth startup as a data scientist on NLP projects. My focus is on fine-tuning language models and implementing RAG (Retrieval-Augmented Generation) for chatbots. My main areas of interest include RAG, AI agents, and AI for good. At work, I'm passionate about developing AI solutions that can make a positive impact. 
+      I'm an AI Engineer passionate about leveraging NLP and LLMs to build impactful solutions, particularly in areas like Retrieval Augmented Generation (RAG) and AI agents. My background in physics (MSc. Physics, IIT Ropar; BSc. Physics, Chemistry, and Mathematics, Kumaun University) provides a strong analytical foundation for tackling complex AI challenges. I'm currently contributing to innovative NLP projects at a stealth startup, document analysis and processing, and building intelligent AI agents.
+I also lead the Omdena Dehradun chapter to develop AI solutions for social impact, where I bring people together to create innovative solutions for social good with AI.
     </p>
     <p>
-      Outside of work, I enjoy discussing new books, exploring philosophical questions related to AI, talking about cricket, and sharing music recommendations. In my free time, you can often find me playing cricket or volleyball. I've given talks on topics related to my work, and you can find the slides from these presentations <a href="https://github.com/adhikarinarayan/talks">here</a>. If you're interested in my projects or have any ideas you'd like to discuss, feel free to contact me.
+      Beyond my professional work, I enjoy exploring the philosophical implications of AI, discussing books and music, and engaging in sports like cricket and volleyball. I also share my work and insights through presentations (slides available  <a href="https://github.com/adhikarinarayan/talks">here</a>.). I'm always open to connecting with fellow AI enthusiasts and researchers to discuss new ideas and potential collaborations. Feel free to reach out!"
     </p>
     
   </div> 
