@@ -16,6 +16,7 @@ title: Brain Food
   <div class="column-right">
     <h2>Books I Enjoyed</h2>
     <ul> 
+      <li>The MANIAC by  Benjamín Labatut</li>
       <li>The Brothers Karamazov by Fyodor Dostoevsky</li>
       <li>Three Body Problem Trilogy by Liu Cixin</li>
       <li>The Last Question by Isaac Asimov</li>
