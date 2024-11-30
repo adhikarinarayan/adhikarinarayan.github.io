@@ -19,7 +19,7 @@ title: About Me
 I also lead the Omdena Dehradun chapter to develop AI solutions for social impact, where I bring people together to create innovative solutions for social good with AI.
     </p>
     <p>
-      Beyond my professional work, I enjoy exploring the philosophical implications of AI, discussing books and music, and engaging in sports like cricket and volleyball. I also share my work and insights through presentations (slides available  <a href="https://github.com/adhikarinarayan/talks">here</a>.). I'm always open to connecting with fellow AI enthusiasts and researchers to discuss new ideas and potential collaborations. Feel free to reach out!"
+      Beyond my professional work, I enjoy exploring the philosophical implications of AI, discussing books and music, and engaging in sports like cricket and volleyball. I also share my work and insights through presentations (slides available  <a href="https://github.com/adhikarinarayan/talks">here</a>.). I'm always open to connecting with fellow AI enthusiasts and researchers to discuss new ideas and potential collaborations. Feel free to reach out!
     </p>
     
   </div> 
