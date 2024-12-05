@@ -6,6 +6,10 @@ baseurl: ""
 # Build settings
 markdown: kramdown
 theme: minima
+highlighter: rouge
+kramdown:
+    input: GFM
+    syntax_highlighter: rouge
 plugins:
   - jekyll-feed
 
