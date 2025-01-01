@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>einsum and AI - adhikarinarayan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true
+            },
+            "HTML-CSS": {
+                preferredFont: "TeX",
+                availableFonts: ["STIX","TeX"],
+                styles: {
+                    ".MathJax": {
+                        "font-size": "100%",
+                        "color": "#333"
+                    }
+                }
+            },
+            messageStyle: "none"
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Blog</a></li>
+                <li><a href="/brain-food">Brain Food</a></li> 
+                <li><a href="/aboutme">About Me</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article class="blog-post">
+  
+    <h1>einsum and AI</h1>
+  
+  <p class="post-meta">Categories: Maths, AI</p>
+  <p class="post-meta">Written on: October 07, 2024</p>
+  <hr class="post-separator">
+  <div class="post-content"><p>In the last two posts, we explored the theoretical aspects of tensors and the Einstein summation notation. Now we will use einsum library.
+Numpy, Pytorch, and TensorFlow all have einsum functionality. In this tutorial, we will use Pytorch.</p>
+
+<p><code class="language-plaintext highlighter-rouge">einsum</code> uses Einstein summation to do linear algebraic operations.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import torch
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># let us create tensor of rank 2
+</span><span class="n">a</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">8</span><span class="p">).</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">a</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>torch.Size([2, 4])
+
+tensor([[0, 1, 2, 3],
+        [4, 5, 6, 7]])
+</code></pre></div></div>
+
+<p>Before we proceed further, let us understand how does it works in pytorch.</p>
+
+<p><code class="language-plaintext highlighter-rouge">torch.einsum()</code> takes two arguments- <code class="language-plaintext highlighter-rouge">equation</code> and <code class="language-plaintext highlighter-rouge">operands</code></p>
+
+<p>in $A_{i,j}$ A is the <code class="language-plaintext highlighter-rouge">operand</code>, and with indices we can create an <code class="language-plaintext highlighter-rouge">equation</code> based on the operation we want, it should be in einstein summation notation.</p>
+
+<h3 id="matrix-transpose">Matrix Transpose</h3>
+
+<hr />
+
+<p>$B_{j,i}=A^{T}_{i,j}$</p>
+
+<p>Here the equation would be <code class="language-plaintext highlighter-rouge">ij-&gt;ji</code></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">b</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">einsum</span><span class="p">(</span><span class="s">'ij-&gt;ji'</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">b</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>torch.Size([4, 2])
+
+
+tensor([[0, 4],
+        [1, 5],
+        [2, 6],
+        [3, 7]])
+</code></pre></div></div>
+
+<h3 id="inner-product">Inner Product</h3>
+<hr />
+<p>$C_{i,k}=A_{i,j}B_{j,k}$
+since it is einstein notation, repeated indices are summed over.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tensor([[0, 1, 2, 3],
+        [4, 5, 6, 7]])
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">b</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tensor([[0, 4],
+        [1, 5],
+        [2, 6],
+        [3, 7]])
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">c</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">einsum</span><span class="p">(</span><span class="s">'ij,jk-&gt;ik'</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">c</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>torch.Size([2, 2])
+
+tensor([[ 14,  38],
+        [ 38, 126]])
+</code></pre></div></div>
+
+<h3 id="outer-product">Outer Product</h3>
+
+<hr />
+<p>$A_i\otimes B_j=C_{i,j}$</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">).</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="p">).</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">'a=</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s">,b=</span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">'shape of a=</span><span class="si">{</span><span class="n">a</span><span class="p">.</span><span class="n">shape</span><span class="si">}</span><span class="s">,shape of b=</span><span class="si">{</span><span class="n">b</span><span class="p">.</span><span class="n">shape</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a=tensor([0, 1, 2, 3]),b=tensor([0, 1])
+shape of a=torch.Size([4]),shape of b=torch.Size([2])
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">c</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">einsum</span><span class="p">(</span><span class="s">'i,j-&gt;ij'</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">'c=</span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">'shape of c=</span><span class="si">{</span><span class="n">c</span><span class="p">.</span><span class="n">shape</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>c=tensor([[0, 0],
+        [0, 1],
+        [0, 2],
+        [0, 3]])
+shape of c=torch.Size([4, 2])
+</code></pre></div></div>
+
+<p>These are some basic operations. we can also do the hadamard operation, contraction etc also</p>
+
+<h2 id="neural-network-with-einsum">Neural Network with einsum</h2>
+
+<hr />
+
+<p>Hidden layer:</p>
+
+\[h_{j,k} =  x_{j,i} \cdot W^{1}_{i,k} + b^{1}_{k}\]
+
+<p>Output:</p>
+
+\[o_{j,n} = h_{j,k} \cdot W^{2}_{k,n} + b^{2}_{n}\]
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">torch</span>
+<span class="c1"># Create a network class
+</span><span class="k">class</span> <span class="nc">NeuralNetwork</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">,</span> <span class="n">output_size</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">W1</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">randn</span><span class="p">(</span><span class="n">input_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">,</span> <span class="n">requires_grad</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">b1</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">randn</span><span class="p">(</span><span class="n">hidden_size</span><span class="p">,</span> <span class="n">requires_grad</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">W2</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">randn</span><span class="p">(</span><span class="n">hidden_size</span><span class="p">,</span> <span class="n">output_size</span><span class="p">,</span> <span class="n">requires_grad</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">b2</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">randn</span><span class="p">(</span><span class="n">output_size</span><span class="p">,</span> <span class="n">requires_grad</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">hidden</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">einsum</span><span class="p">(</span><span class="s">"ji,ik-&gt;jk"</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="p">.</span><span class="n">W1</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="p">.</span><span class="n">b1</span> <span class="c1"># use of einsum
+</span>        <span class="n">hidden</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">relu</span><span class="p">(</span><span class="n">hidden</span><span class="p">)</span> <span class="c1"># Activation function
+</span>        <span class="n">output</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">einsum</span><span class="p">(</span><span class="s">"jk,kn-&gt;jn"</span><span class="p">,</span> <span class="n">hidden</span><span class="p">,</span> <span class="bp">self</span><span class="p">.</span><span class="n">W2</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="p">.</span><span class="n">b2</span> <span class="c1"># use of einsum
+</span>        <span class="k">return</span> <span class="n">output</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Hyperparameters
+</span><span class="n">input_size</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">hidden_size</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">output_size</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">num_epochs</span> <span class="o">=</span> <span class="mi">200</span>
+
+<span class="c1"># Create the network
+</span><span class="n">model</span> <span class="o">=</span> <span class="n">NeuralNetwork</span><span class="p">(</span><span class="n">input_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">,</span> <span class="n">output_size</span><span class="p">)</span>
+
+<span class="c1"># Let's create some dummy data
+</span><span class="n">X</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">input_size</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">output_size</span><span class="p">,</span> <span class="p">(</span><span class="mi">100</span><span class="p">,))</span>  <span class="c1"># Example: classification task
+</span>
+<span class="c1"># Optimizer (Stochastic Gradient Descent)
+</span><span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">optim</span><span class="p">.</span><span class="n">SGD</span><span class="p">([</span><span class="n">model</span><span class="p">.</span><span class="n">W1</span><span class="p">,</span> <span class="n">model</span><span class="p">.</span><span class="n">b1</span><span class="p">,</span> <span class="n">model</span><span class="p">.</span><span class="n">W2</span><span class="p">,</span> <span class="n">model</span><span class="p">.</span><span class="n">b2</span><span class="p">],</span> <span class="n">lr</span><span class="o">=</span><span class="n">learning_rate</span><span class="p">)</span>
+
+<span class="c1"># Training loop
+</span><span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_epochs</span><span class="p">):</span>
+    <span class="c1"># Forward pass
+</span>    <span class="n">outputs</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">forward</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+    <span class="c1"># Calculate loss (using cross-entropy for classification)
+</span>    <span class="n">loss</span> <span class="o">=</span> <span class="n">F</span><span class="p">.</span><span class="n">cross_entropy</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+    <span class="c1"># Backward pass
+</span>    <span class="n">optimizer</span><span class="p">.</span><span class="n">zero_grad</span><span class="p">()</span>  <span class="c1"># Reset gradients
+</span>    <span class="n">loss</span><span class="p">.</span><span class="n">backward</span><span class="p">()</span>
+    <span class="n">optimizer</span><span class="p">.</span><span class="n">step</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">epoch</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">'Epoch [</span><span class="si">{</span><span class="n">epoch</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s">/</span><span class="si">{</span><span class="n">num_epochs</span><span class="si">}</span><span class="s">], Loss: </span><span class="si">{</span><span class="n">loss</span><span class="p">.</span><span class="n">item</span><span class="p">()</span><span class="si">:</span><span class="p">.</span><span class="mi">4</span><span class="n">f</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Epoch [10/200], Loss: 2.5896
+Epoch [20/200], Loss: 2.1862
+Epoch [30/200], Loss: 1.8618
+Epoch [40/200], Loss: 1.6038
+Epoch [50/200], Loss: 1.4057
+Epoch [60/200], Loss: 1.2593
+Epoch [70/200], Loss: 1.1501
+Epoch [80/200], Loss: 1.0642
+Epoch [90/200], Loss: 0.9937
+Epoch [100/200], Loss: 0.9344
+Epoch [110/200], Loss: 0.8843
+Epoch [120/200], Loss: 0.8422
+Epoch [130/200], Loss: 0.8071
+Epoch [140/200], Loss: 0.7782
+Epoch [150/200], Loss: 0.7547
+Epoch [160/200], Loss: 0.7359
+Epoch [170/200], Loss: 0.7208
+Epoch [180/200], Loss: 0.7089
+Epoch [190/200], Loss: 0.6995
+Epoch [200/200], Loss: 0.6921
+</code></pre></div></div>
+
+</div>
+</article>
+
+    </main>
+    <script>
+        if (window.MathJax) {
+            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+        }
+    </script>
+</body>
+</html>

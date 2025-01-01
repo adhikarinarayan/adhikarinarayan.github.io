@@ -1,0 +1,37 @@
+title: adhikarinarayan
+description: Personal portfolio and blog of Narayan, featuring projects, blog posts, and recommendations.
+url: "https://adhikarinarayan.github.io"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  math_engine: mathjax
+plugins:
+  - jekyll-feed
+  - rouge
+
+# Collections
+collections:
+  projects:
+    output: true
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+      
+excerpt_separator: "\n\n"

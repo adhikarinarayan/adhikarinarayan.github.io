@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-01-01T20:02:23+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">adhikarinarayan</title><subtitle>Personal portfolio and blog of Narayan, featuring projects, blog posts, and recommendations.</subtitle><entry><title type="html">Language Modelling with n-grams</title><link href="http://localhost:4000/nlp/ai/2024/12/27/ngram.html" rel="alternate" type="text/html" title="Language Modelling with n-grams" /><published>2024-12-27T00:00:00+05:30</published><updated>2024-12-27T00:00:00+05:30</updated><id>http://localhost:4000/nlp/ai/2024/12/27/ngram</id><content type="html" xml:base="http://localhost:4000/nlp/ai/2024/12/27/ngram.html"><![CDATA[]]></content><author><name></name></author><category term="NLP" /><category term="AI" /><summary type="html"><![CDATA[In this article, we will begin with the fundamentals of probability and aim to develop a model capable of predicting future words. Additionally, we will evaluate the model's effectiveness by defining an appropriate metric for testing its quality.]]></summary></entry><entry><title type="html">Hopfield Networks and the Interplay of AI, Physics, and Neuroscience</title><link href="http://localhost:4000/ai/2024/10/12/Hofpield-networks.html" rel="alternate" type="text/html" title="Hopfield Networks and the Interplay of AI, Physics, and Neuroscience" /><published>2024-10-12T00:00:00+05:30</published><updated>2024-10-12T00:00:00+05:30</updated><id>http://localhost:4000/ai/2024/10/12/Hofpield-networks</id><content type="html" xml:base="http://localhost:4000/ai/2024/10/12/Hofpield-networks.html"><![CDATA[<p align="center">
+ <img src="https://miro.medium.com/v2/resize:fit:786/format:webp/1*_ziP-j1yel5W0hdftUKlbA.jpeg" alt="nobel" width="600" height="400" />
+</p>
+
+<blockquote>
+  <p>The Nobel Prize in Physics 2024 was awarded jointly to John J. Hopfield and Geoffrey E. Hinton “for foundational discoveries and inventions that enable machine learning with artificial neural networks” - Nobel Prize Committee, Royal Swedish Academy of Sciences</p>
+</blockquote>
+
+<p>The Nobel Prize decision for physics this year surprised many people. The connection between the work of Hopfield and Hinton and the field of physics may not be immediately obvious. Hinton, often referred to as the ‘godfather of AI’, developed the concept of Boltzmann machines based on Hopfield’s ideas. While Hinton has made numerous contributions to the field of AI, the Nobel committee recognized this particular idea as being significant for the Nobel Prize in physics. On the other hand, Hopfield, a physicist by training, has made contributions spanning from physics to neuroscience to AI. In this article, I will explore Hopfield’s idea - the Hopfield network - which led to the Nobel Prize in physics. I will demonstrate how he elegantly applied this idea from physics to the human brain, thereby advancing the field of neural networks and AI.</p>
+
+<h2 id="hopfield-networks">Hopfield Networks</h2>
+
+<p>John Hopfield introduced the concept of Hopfield networks in a seminal paper titled “Neural Networks and Physical Systems with Emergent Collective Computational Abilities” in 1982.<br />
+Hopfield networks were introduced as a model for associative memory or Content-addressable memory (CAM). The human brain is composed of complex networks of neurons. Hopfield networks, while a simplified mathematical abstraction of biological neural networks, provide a compelling model for understanding the principles behind associative memory. They demonstrate how interconnected units can store and retrieve patterns based on partial cues, much like how a familiar scent can trigger a vivid memory.<br />
+Hopfield network has two main components-</p>
+
+<ol>
+  <li>Neurons: It is the processing unit and can be in the state 1 or -1
+ \(x_i\in \{-1,1\}^d\)
+ where <em>d</em> is the length of the patterns</li>
+  <li>Connections: neurons are connected to each other with synapses. These connections can be mathematical denotes by weights which determine the strength of interaction between neurons.</li>
+</ol>
+
+<h3 id="learning">Learning</h3>
+<p>But how does the brain learn these patterns? In other words, how does it store the associative memory? Hopfield used the idea of Hebbian learning . Neurons learn by adjusting the weights using the Hebbian learning rule, i.e. “neurons that fire together, wire together.”</p>
+
+<p>Hebbian learning rule can be expressed as:
+\(w_{ij} = x_i \; x_j\)</p>
+
+<p>Where $w_{ij}$  is the weight of neuron i to neuron j. If $x_i ,x_j$  have same states, the weight increases otherwise it decreases.</p>
+
+<p>Let us understand this by an example. Let us say we have 3 neurons and they have some pattern as shown in the figure below.</p>
+
+<p align="center">
+ <img src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*Fn1i9HpssbPMBdhAL4svJQ.png" alt="example" />
+</p>
+
+<p>We can use the Hebbian rule to calculate the weight of each pair of neurons. Each pattern can be represented with a vector, and the entire weight matrix can be computed by taking the outer product.</p>
+
+\[W=  x_i x_i^{T}\;\;and \;w_{ii}=0\]
+
+<p>Now let us explore the general case, suppose we have N patterns- 
+\(\{x^{(1)}....{x^{(N)}}\},\;\; x^{i} \in  ℝ^{N\times1}\) 
+We want a weight matrix W, which works for set of patterns/memories.
+\(W_{ij}= \frac{1}{N}\sum^{N}_{s=i} x_{i}^{(s)} x^{(s)}_{j},\;\; W_{ii}=0\)
+Here the $W_{ij}$ is known as the average coactivation between i,j.</p>
+
+<p>Wright can also be expressed in the matrix form as -</p>
+
+\[W= \frac{1}{N}\sum^{N}_{s=i} \textbf{x}^{(s)} (\textbf{x}^{(s)})^{T}\]
+
+<p>Here the outer product $x_i x_i^T$ captures the correlations between all pairs of neurons within that specific pattern.</p>
+
+<p>Hopfield networks have some interesting properties:</p>
+<ol>
+  <li> Hopfield networks are <strong>recurrent neural networks</strong>. The output of a neuron can become the input to other neurons.
+2. Hopfield networks perform more effectively when the stored patterns are <strong>orthogonal</strong> to each other.</li>
+  <li>The connection weights in a Hopfield network are <strong>symmetric</strong>, meaning that $w_{ij} = w_{ji}$ for any pair of neurons <em>i</em> and <em>j</em>.</li>
+  <li>Usually self-connections $w_{ii} = 0$ are usually set to zero in Hopfield networks to prevent unstable dynamics and redundancy</li>
+  <li>Neurons in a Hopfield network can have either <strong>binary (0 and 1)</strong> or <strong>bipolar (-1 and +1)</strong> states, depending on the specific implementation.</li>
+</ol>
+
+<h3 id="retrieval">Retrieval</h3>
+
+<p>Once the patterns are stored, they can be retrieved from a cue or noise that partially matches the original pattern.</p>
+
+<p>We can update the states in two ways:</p>
+
+<ol>
+  <li><strong>Synchronously</strong> — all neurons update their states simultaneously at each time step, based on the states of all neurons from the previous time step.</li>
+  <li><strong>Asynchronously</strong> — neurons are updated one at a time, asynchronously. This means that a neuron’s state is updated based on the current states of all the other neurons, and then the next neuron is updated, and so on. Asynchronous updates lead to guaranteed stable states, hence we will use it here.</li>
+</ol>
+
+<p>The update rule is as follows:</p>
+
+\[x_{i}(t+1) = sign(∑ (w_{ij} * x_{j}(t)) - \theta_i)\]
+
+<p>where-</p>
+<ul>
+  <li>$s_j(t)$ is the state of neuron j at the current time step.</li>
+  <li>$w_{ij}$: The weight of the connection between neuron i and neuron j.</li>
+  <li>sign is  the sign function (returns +1 if the argument is positive, -1 if it’s negative).</li>
+  <li>$s_i(t+1)$: The state of neuron i at the next time step.</li>
+  <li>$\theta_i$ is the bias term for neuron i</li>
+</ul>
+
+<p>This update rule minimizes the Energy function:</p>
+
+\[E =-\frac{1}{2} \sum^{d}_{i=1}\sum^{d}_{j=1} x_i w_{ij}x_j -\sum^{d}_{i=1}\theta_ix_i\;\;, i\neq j\]
+
+\[E =-\frac{1}{2} \sum_{i\neq j}\sum \textbf{X}^T W_{ij} \textbf{X} - \Theta \textbf{x}\]
+
+<p>It is also known as Hopfield energy. The update rule can be derived from Hopfield energy using gradient descent.<br />
+We can iteratively update it until it converges — i.e. $x(t+1)=x(t)$</p>
+
+<h3 id="example">Example</h3>
+
+<p>To demonstrate the learning process, we start with two images (patterns) as shown in the code below and then train them using Hopfield networks. Pattern 1 represents the letter “T” and Pattern 2 represents the letter “I.”
+Once the learning process is finished, the Hopfield network can retrieve the closest pattern to a given noisy pattern.</p>
+
+<p>The code example can be found <a href="https://github.com/adhikarinarayan/talks/blob/main/hopfield.ipynb">here</a>.</p>
+
+<h2 id="connection-with-physics">Connection with Physics</h2>
+<p>The energy function mentioned above is strikingly similar to the Ising model in statistical mechanics.<br />
+In his seminal paper of 1982, Hopfield mentioned: “This case (symmetric case) is isomorphic with an Ising Model, and the V_ij(connection weight) provides the role of exchange coupling.”</p>
+
+<p>In Physics, the Ising model is the simplest model for ferromagnetism. We consider a lattice, and each point in that lattice has a spin (+1 or -1).</p>
+
+<p>The Hamiltonian for the Ising model can be written as: -</p>
+
+\[H = - \sum_{&lt;ij&gt;} J_{ij} \sigma_i \sigma_i + \sum_j h_j \sigma_j\]
+
+<p>where -</p>
+<ul>
+  <li>$\sigma_i\in {-1,1}$ represents the spin of site i.</li>
+  <li>J: The interaction strength between neighboring spins.</li>
+  <li>the first sum is over pairs of nearest-neighbor spins.</li>
+  <li>h: The external magnetic field strength.</li>
+</ul>
+
+<p>It is similar to the energy function of the Hopfield energy function. Spin can be thought of as analogous to the state of a neuron, and interaction strength is similar to the weight matrix, and so on.</p>
+<h2 id="significance-of-hopfield-networks">Significance of Hopfield networks</h2>
+
+<p>The Hopfield networks, while quite basic and with several limitations such as issues with overlapping patterns, have played a significant role in the advancement of AI and neural networks. They served as early models of associative memory and laid the foundation for later models such as Boltzmann machines. Hopfield networks were important in unsupervised learning because we don’t have outputs and hence have no loss function. Therefore, their energy minimization-based approaches are very useful.</p>
+
+<h2 id="references">References:</h2>
+
+<ol>
+  <li><a href="https://en.wikipedia.org/wiki/Hopfield_network#Hebbian_learning_rule_for_Hopfield_networks">Hopfield network — Wikipedia</a></li>
+  <li><a href="https://notesonai.com/hopfield+networks">Hopfield Networks — Notes on AI</a></li>
+  <li><a href="https://www.youtube.com/watch?v=81B-ESqgCjs&amp;ab_channel=JeffOrchard">Hopfield Networks - YouTube</a></li>
+  <li><a href="https://ml-jku.github.io/hopfield-layers/">Hopfield Networks is All You Need</a></li>
+</ol>]]></content><author><name></name></author><category term="AI" /><summary type="html"><![CDATA[The Nobel Prize in Physics 2024 was awarded jointly to John J. Hopfield and Geoffrey E. Hinton for foundational discoveries and inventions that enable machine learning with artificial neural networks - Nobel Prize Committee, Royal Swedish Academy of Sciences]]></summary></entry><entry><title type="html">einsum and AI</title><link href="http://localhost:4000/maths/ai/2024/10/07/einsum.html" rel="alternate" type="text/html" title="einsum and AI" /><published>2024-10-07T00:00:00+05:30</published><updated>2024-10-07T00:00:00+05:30</updated><id>http://localhost:4000/maths/ai/2024/10/07/einsum</id><content type="html" xml:base="http://localhost:4000/maths/ai/2024/10/07/einsum.html"><![CDATA[<p>In the last two posts, we explored the theoretical aspects of tensors and the Einstein summation notation. Now we will use einsum library.
+Numpy, Pytorch, and TensorFlow all have einsum functionality. In this tutorial, we will use Pytorch.</p>
+
+<p><code class="language-plaintext highlighter-rouge">einsum</code> uses Einstein summation to do linear algebraic operations.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import torch
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># let us create tensor of rank 2
+</span><span class="n">a</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">8</span><span class="p">).</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">a</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>torch.Size([2, 4])
+
+tensor([[0, 1, 2, 3],
+        [4, 5, 6, 7]])
+</code></pre></div></div>
+
+<p>Before we proceed further, let us understand how does it works in pytorch.</p>
+
+<p><code class="language-plaintext highlighter-rouge">torch.einsum()</code> takes two arguments- <code class="language-plaintext highlighter-rouge">equation</code> and <code class="language-plaintext highlighter-rouge">operands</code></p>
+
+<p>in $A_{i,j}$ A is the <code class="language-plaintext highlighter-rouge">operand</code>, and with indices we can create an <code class="language-plaintext highlighter-rouge">equation</code> based on the operation we want, it should be in einstein summation notation.</p>
+
+<h3 id="matrix-transpose">Matrix Transpose</h3>
+
+<hr />
+
+<p>$B_{j,i}=A^{T}_{i,j}$</p>
+
+<p>Here the equation would be <code class="language-plaintext highlighter-rouge">ij-&gt;ji</code></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">b</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">einsum</span><span class="p">(</span><span class="s">'ij-&gt;ji'</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">b</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>torch.Size([4, 2])
+
+
+tensor([[0, 4],
+        [1, 5],
+        [2, 6],
+        [3, 7]])
+</code></pre></div></div>
+
+<h3 id="inner-product">Inner Product</h3>
+<hr />
+<p>$C_{i,k}=A_{i,j}B_{j,k}$
+since it is einstein notation, repeated indices are summed over.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tensor([[0, 1, 2, 3],
+        [4, 5, 6, 7]])
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">b</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tensor([[0, 4],
+        [1, 5],
+        [2, 6],
+        [3, 7]])
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">c</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">einsum</span><span class="p">(</span><span class="s">'ij,jk-&gt;ik'</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">c</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>torch.Size([2, 2])
+
+tensor([[ 14,  38],
+        [ 38, 126]])
+</code></pre></div></div>
+
+<h3 id="outer-product">Outer Product</h3>
+
+<hr />
+<p>$A_i\otimes B_j=C_{i,j}$</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">).</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="p">).</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">'a=</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s">,b=</span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">'shape of a=</span><span class="si">{</span><span class="n">a</span><span class="p">.</span><span class="n">shape</span><span class="si">}</span><span class="s">,shape of b=</span><span class="si">{</span><span class="n">b</span><span class="p">.</span><span class="n">shape</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a=tensor([0, 1, 2, 3]),b=tensor([0, 1])
+shape of a=torch.Size([4]),shape of b=torch.Size([2])
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">c</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">einsum</span><span class="p">(</span><span class="s">'i,j-&gt;ij'</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">'c=</span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">'shape of c=</span><span class="si">{</span><span class="n">c</span><span class="p">.</span><span class="n">shape</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>c=tensor([[0, 0],
+        [0, 1],
+        [0, 2],
+        [0, 3]])
+shape of c=torch.Size([4, 2])
+</code></pre></div></div>
+
+<p>These are some basic operations. we can also do the hadamard operation, contraction etc also</p>
+
+<h2 id="neural-network-with-einsum">Neural Network with einsum</h2>
+
+<hr />
+
+<p>Hidden layer:</p>
+
+\[h_{j,k} =  x_{j,i} \cdot W^{1}_{i,k} + b^{1}_{k}\]
+
+<p>Output:</p>
+
+\[o_{j,n} = h_{j,k} \cdot W^{2}_{k,n} + b^{2}_{n}\]
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">torch</span>
+<span class="c1"># Create a network class
+</span><span class="k">class</span> <span class="nc">NeuralNetwork</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">,</span> <span class="n">output_size</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">W1</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">randn</span><span class="p">(</span><span class="n">input_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">,</span> <span class="n">requires_grad</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">b1</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">randn</span><span class="p">(</span><span class="n">hidden_size</span><span class="p">,</span> <span class="n">requires_grad</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">W2</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">randn</span><span class="p">(</span><span class="n">hidden_size</span><span class="p">,</span> <span class="n">output_size</span><span class="p">,</span> <span class="n">requires_grad</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">b2</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">randn</span><span class="p">(</span><span class="n">output_size</span><span class="p">,</span> <span class="n">requires_grad</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">hidden</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">einsum</span><span class="p">(</span><span class="s">"ji,ik-&gt;jk"</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="p">.</span><span class="n">W1</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="p">.</span><span class="n">b1</span> <span class="c1"># use of einsum
+</span>        <span class="n">hidden</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">relu</span><span class="p">(</span><span class="n">hidden</span><span class="p">)</span> <span class="c1"># Activation function
+</span>        <span class="n">output</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">einsum</span><span class="p">(</span><span class="s">"jk,kn-&gt;jn"</span><span class="p">,</span> <span class="n">hidden</span><span class="p">,</span> <span class="bp">self</span><span class="p">.</span><span class="n">W2</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="p">.</span><span class="n">b2</span> <span class="c1"># use of einsum
+</span>        <span class="k">return</span> <span class="n">output</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Hyperparameters
+</span><span class="n">input_size</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">hidden_size</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">output_size</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">num_epochs</span> <span class="o">=</span> <span class="mi">200</span>
+
+<span class="c1"># Create the network
+</span><span class="n">model</span> <span class="o">=</span> <span class="n">NeuralNetwork</span><span class="p">(</span><span class="n">input_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">,</span> <span class="n">output_size</span><span class="p">)</span>
+
+<span class="c1"># Let's create some dummy data
+</span><span class="n">X</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">input_size</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">output_size</span><span class="p">,</span> <span class="p">(</span><span class="mi">100</span><span class="p">,))</span>  <span class="c1"># Example: classification task
+</span>
+<span class="c1"># Optimizer (Stochastic Gradient Descent)
+</span><span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">optim</span><span class="p">.</span><span class="n">SGD</span><span class="p">([</span><span class="n">model</span><span class="p">.</span><span class="n">W1</span><span class="p">,</span> <span class="n">model</span><span class="p">.</span><span class="n">b1</span><span class="p">,</span> <span class="n">model</span><span class="p">.</span><span class="n">W2</span><span class="p">,</span> <span class="n">model</span><span class="p">.</span><span class="n">b2</span><span class="p">],</span> <span class="n">lr</span><span class="o">=</span><span class="n">learning_rate</span><span class="p">)</span>
+
+<span class="c1"># Training loop
+</span><span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_epochs</span><span class="p">):</span>
+    <span class="c1"># Forward pass
+</span>    <span class="n">outputs</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">forward</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+    <span class="c1"># Calculate loss (using cross-entropy for classification)
+</span>    <span class="n">loss</span> <span class="o">=</span> <span class="n">F</span><span class="p">.</span><span class="n">cross_entropy</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+    <span class="c1"># Backward pass
+</span>    <span class="n">optimizer</span><span class="p">.</span><span class="n">zero_grad</span><span class="p">()</span>  <span class="c1"># Reset gradients
+</span>    <span class="n">loss</span><span class="p">.</span><span class="n">backward</span><span class="p">()</span>
+    <span class="n">optimizer</span><span class="p">.</span><span class="n">step</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">epoch</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">'Epoch [</span><span class="si">{</span><span class="n">epoch</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s">/</span><span class="si">{</span><span class="n">num_epochs</span><span class="si">}</span><span class="s">], Loss: </span><span class="si">{</span><span class="n">loss</span><span class="p">.</span><span class="n">item</span><span class="p">()</span><span class="si">:</span><span class="p">.</span><span class="mi">4</span><span class="n">f</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Epoch [10/200], Loss: 2.5896
+Epoch [20/200], Loss: 2.1862
+Epoch [30/200], Loss: 1.8618
+Epoch [40/200], Loss: 1.6038
+Epoch [50/200], Loss: 1.4057
+Epoch [60/200], Loss: 1.2593
+Epoch [70/200], Loss: 1.1501
+Epoch [80/200], Loss: 1.0642
+Epoch [90/200], Loss: 0.9937
+Epoch [100/200], Loss: 0.9344
+Epoch [110/200], Loss: 0.8843
+Epoch [120/200], Loss: 0.8422
+Epoch [130/200], Loss: 0.8071
+Epoch [140/200], Loss: 0.7782
+Epoch [150/200], Loss: 0.7547
+Epoch [160/200], Loss: 0.7359
+Epoch [170/200], Loss: 0.7208
+Epoch [180/200], Loss: 0.7089
+Epoch [190/200], Loss: 0.6995
+Epoch [200/200], Loss: 0.6921
+</code></pre></div></div>]]></content><author><name></name></author><category term="Maths" /><category term="AI" /><summary type="html"><![CDATA[Numpy, Pytorch, and Tensorflow all have einsum functionality. In this tutorial, we will use Pytorch.]]></summary></entry><entry><title type="html">Tensors and AI</title><link href="http://localhost:4000/maths/ai/2024/10/05/Tensors-in-AI.html" rel="alternate" type="text/html" title="Tensors and AI" /><published>2024-10-05T00:00:00+05:30</published><updated>2024-10-05T00:00:00+05:30</updated><id>http://localhost:4000/maths/ai/2024/10/05/Tensors-in-AI</id><content type="html" xml:base="http://localhost:4000/maths/ai/2024/10/05/Tensors-in-AI.html"><![CDATA[<blockquote>
+  <p>“I have made a great discovery in mathematics; I have suppressed the summation sign every time that the summation must be made over an index which occurs twice…” - Albert Einstein</p>
+</blockquote>
+
+<p>After publishing his groundbreaking papers on the special theory of relativity and the photoelectric effect in his  ”miracle year” of 1905, Einstein began developing the general theory of relativity, extending the principles of special relativity to include gravity and accelerated frames of reference.<br />
+Tensor and differential geometry are two mathematical tools heavily used in general relativity.<br />
+Starting from 1916, in his equations Einstein began to use a rule to make his calculations more clear and concise - Summation over repeated index is automatically understood without writing the summation symbol explicitly. Later, it came to be known as Einstein’s summation notation.</p>
+
+<p>It is very useful rule and makes tensorial calculations concise -</p>
+<ol>
+  <li> Repeated indices are implicitly summed over</li>
+  <li>Each index can appear at most twice in the equation</li>
+  <li>Each term must contain identical non-repeated indices</li>
+</ol>
+
+<p>Examples:</p>
+
+\[\sum_{i} a_ib_i=a_ib_i\]
+
+<p>Let us say we have two matrices A (m x n) and B (n x p), after multiplication resulting in a matrix C (m x p). The element Cᵢⱼ is calculated as the sum of the products of corresponding elements in the i-th row of A and the j-th column of B:</p>
+
+<p>Then  $C_{i,j} = \sum_{k}A_{i,k}B_{k,j}$</p>
+
+<p>It can be written simply as $C_{i,j} = A_{i,k}B_{k,j}$ using summation notation.</p>
+
+<h2 id="usefulness-of-tensor-in-ai">Usefulness of Tensor in AI</h2>
+
+<p>As we discussed tensors are very useful in many branches of physics particularly in General relativity etc. However, this object is widely used in deep learning and AI too. Let us explore the reason -</p>
+
+<h3 id="1-it-can-easily-represent-multidimensional-data">1. It can easily represent multidimensional data</h3>
+<p>In AI we often deal we data in forms such as text or images. An image can be represented with a tensor.<br />
+For each element 3 indices- (height, width, and color channel) are required to show the pixel intensity for a specific channel.</p>
+
+<p>Example:<br />
+A 256x256 RGB image is a tensor of shape (256,256,3).<br />
+However, a 256x256 grayscale image is a tensor of shape (256,256) since its color channel value is zero for all pixels.</p>
+<p align="center">
+ <img src="https://raw.githubusercontent.com/adhikarinarayan/adhikarinarayan.github.io/refs/heads/main/assets/images/3dtensorr.svg" alt="3dtensor" />
+</p>
+
+<p>In NLP we use embedding for the representation of text. Usually, we store these embeddings in a matrix, which is again a tensor.</p>
+<h3 id="2-generalize-linear-algebra">2. Generalize Linear Algebra</h3>
+<p>Using tensors we can generalize concepts like eigenvalue, and eigenvectors to higher orders. We can generalize the transformation too. For example, we can easily apply linear transformation in CNN where data is represented in the form of a tensor.</p>
+
+<h3 id="3-efficient-computation">3. Efficient computation</h3>
+<p>GPUs are the backbone of computation in AI these days. They are designed for the tensor operations. Libraries like Pytorch use this and optimize the algorithms for enhancing the computational efficiency of deep learning models. Since Tensors extend the concept of matrix to higher dimensions they are highly suitable for to be used to parallel processing.</p>
+
+<h2 id="references">References</h2>
+
+<p><a href="https://mathworld.wolfram.com/EinsteinSummation.html">Einstein Summation – from Wolfram MathWorld</a></p>]]></content><author><name></name></author><category term="Maths" /><category term="AI" /><summary type="html"><![CDATA[Tensor and differential geometry are two mathematical tools heavily used in general relativity. Starting from 1916, in his equations Einstein began to use a rule to make his calculations more clear and concise]]></summary></entry><entry><title type="html">Understanding Tensors</title><link href="http://localhost:4000/maths/ai/2024/10/03/Tensor-Basics.html" rel="alternate" type="text/html" title="Understanding Tensors" /><published>2024-10-03T00:00:00+05:30</published><updated>2024-10-03T00:00:00+05:30</updated><id>http://localhost:4000/maths/ai/2024/10/03/Tensor-Basics</id><content type="html" xml:base="http://localhost:4000/maths/ai/2024/10/03/Tensor-Basics.html"><![CDATA[<p>What is a Tensor? This is a question that is usually discussed in mathematics or physics lectures. With the advent of neural networks, we can see its prominence in the field of AI as well.
+For a physicist - A tensor is a mathematical object that can be used to describe a physical quantity. Vectors and Scalars are just special cases of tensors. They can be covariant or contravariant. They have some special transformation rules too. 
+But we are not heading towards a course in General relativity, Hence In our discussion, we will look into tensors simply as a multidimensional array. 
+But one can ask, why to even use tensors here? we will try to answer this question in the upcoming post. First, let’s familiarize ourselves with this concept.</p>
+
+<h2 id="tensor-basics-dimensions-and-rank">Tensor Basics: Dimensions and Rank</h2>
+
+<p>To define a tensor, we need two things- i) dimension and ii) rank(order).
+Each tensor lives in some vector space it can have dimension(m) like 1,2,3….. so on. Also, to represent each element we need some indices, it is called rank(n) of tensor.
+If there is a tensor of rank-n and dimension-m, then it will have $m^n$ components.</p>
+
+<p>Let us understand it with a simple example:
+Suppose m = 2, n = 1, then it will have 2 components and 1 index. Suppose m = 2 and n = 1. This tensor will have 2 components and 1 index. We’ve seen this tensor before - it’s a vector in 2D space! $A_i = (A_1,A_2)$.
+Actually vector and scalar are also tensors. Vector is tensor of rank 1, it can be represented by a column. Scalar is a tensor of rank 0, it is represented by a number.
+If we take n=2,m=2, it will have 4 components. Also, it will have two indices for each component. Surely we don’t have a name for it. But its representation looks familiar.
+It is a matrix.</p>
+
+\[A_{i,j} = \begin{bmatrix}  
+a_{11} &amp; a_{12}\\  
+a_{21} &amp; a_{22}   
+\end{bmatrix}\]
+
+<p>If we increase rank further we will have a structure like a rubric cube and so on. Higher-order tensors are hard to visualize.</p>
+
+<h2 id="tensor-operations">Tensor Operations</h2>
+<p>We have understood these objects a little bit, now the next question is, can we do ordinary addition, multiplication, etc. with these? The answer is, yes.
+Multiplication is not straightforward, there are many concepts like element-wise multiplication, inner product, outer product, etc.</p>
+
+<h3 id="addition-and-subtraction">Addition and Subtraction</h3>
+
+<p>We can add two tensors, provided they have the same shape. It is similar to element-wise addition or subtraction of Matrix. The final object will also be a tensor of the same shape.</p>
+
+<h3 id="inner-product">Inner Product</h3>
+
+<p>The inner product is a generalization of the dot product for the tensors.
+It takes two tensors and returns a tensor of a lower order by contracting along a specified direction.
+For tensor of rank-2:
+\((A.B)_{i,k}= \sum_{j=1}^{n} A_{i,j}.B_{j,k}\)</p>
+
+<p>Example:
+\(A = \begin{bmatrix}  
+1 &amp; 2\\  
+4 &amp; 5
+\end{bmatrix}
+\\
+,
+B = \begin{bmatrix}  
+2 &amp; 2\\  
+5 &amp; 12   
+\end{bmatrix}\)
+\(A.B = \begin{pmatrix}  
+1*2+5*2 &amp; 2*1+2*12\\  
+2*4+5*4 &amp; 4*2+12*5   
+\end{pmatrix}\)</p>
+
+<p>The dot product is a special case of Inner product, where both tensors are vectors.</p>
+
+<p><code class="language-plaintext highlighter-rouge">u</code> · <code class="language-plaintext highlighter-rouge">v</code> = u₁v₁ + u₂v₂ + … + uₙvₙ</p>
+
+<h3 id="outer-product">Outer Product</h3>
+<p>Given two tensors, the outer product returns the tensor whose order is the sum of the order of inputs.
+For rank-1 tensor(Vector):
+\(A\otimes B=A_i * B_j\)
+It will become a tensor of rank 2.
+Example:
+A = [1,2,5,4], B=[5,0,2]</p>
+
+<p>\(A \otimes B = A*B^T= \begin{bmatrix}  
+1*5 &amp; 1*0 &amp; 1*2\\  
+2*5 &amp; 2*0 &amp; 2*2 \\
+5*5 &amp; 5*0 &amp; 5*2 \\
+4*5 &amp; 4*0 &amp; 4*2
+\end{bmatrix}=\begin{bmatrix}  
+5&amp; 0&amp; 2\\  
+10 &amp; 0 &amp; 4 \\
+25 &amp; 0 &amp; 10 \\
+20 &amp; 0 &amp; 8
+\end{bmatrix}\) 
+Here the order of product is 2.</p>
+
+<p>Similarly, we can extend this process to higher-order tensors of p-th and q-th order.</p>
+
+\[(A ⊗ B)_{i1...ip, j1...jq} = A_{i1...ip} * B_{j1...jq}\]]]></content><author><name></name></author><category term="Maths" /><category term="AI" /><summary type="html"><![CDATA[What is a Tensor? This is a question that is usually discussed in mathematics or physics lectures. With the advent of neural networks, we can see its prominence in the field of AI as well. For a physicist - A tensor is a mathematical object that can be used to describe a physical quantity.]]></summary></entry></feed>
