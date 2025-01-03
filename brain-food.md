@@ -16,6 +16,7 @@ title: Brain Food
   <div class="column-right">
     <h2>Books I Enjoyed</h2>
     <ul>
+      <li>Project Hail Mary by Andy Weir</li>
       <li>Why Machines Learn by Anil Ananthaswamy</li>
       <li>The MANIAC by Benjamín Labatut</li>
       <li>The Brothers Karamazov by Fyodor Dostoevsky</li>

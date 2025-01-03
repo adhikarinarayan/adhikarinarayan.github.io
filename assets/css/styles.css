@@ -1,6 +1,6 @@
 /* General Styles */
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Helvetica', sans-serif;
   line-height: 1.6;
   background-color: #E5EDF1; /* Very light grey background */
   color: #000;
@@ -351,11 +351,11 @@ code {
 
 .column-left ul li, .column-right ul li {
   margin-bottom: 0.5em;
-  color: #769aae; /* Lighter blue-grey text */
+  color: #344e5d; /* Lighter blue-grey text */
 }
 
 .column-left ul li a, .column-right ul li a {
-  color: #96C2DB; /* Lighter blue-grey text */
+  color: #6fb9e3; /* Lighter blue-grey text */
   text-decoration: none;
   font-weight: bold;
 }
