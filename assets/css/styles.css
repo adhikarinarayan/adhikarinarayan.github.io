@@ -357,7 +357,6 @@ code {
 .column-left ul li a, .column-right ul li a {
   color: #6fb9e3; /* Lighter blue-grey text */
   text-decoration: none;
-  font-weight: bold;
 }
 
 .column-left ul li a:hover, .column-right ul li a:hover {
