@@ -4,7 +4,7 @@ icon: fas fa-info-circle
 order: 3
 ---
 
-> *When something is important enough, you do it even if the odds are not in your favor*
+> *"When something is important enough, you do it even if the odds are not in your favor"*
 {: .prompt-tip }
 
 <p>
