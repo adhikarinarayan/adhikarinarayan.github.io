@@ -20,7 +20,7 @@ title: Narayan's Blog # the main title
 
 tagline: # it will display as the subtitle
 
-description: >- # used by seo meta and the atom feed
+description: Here, I share my passion for Artificial Intelligence (AI), Natural Language Processing (NLP), and whatever else sparks my interest. It's my personal space to explore, ponder, and keep track of fascinating links and books. # used by seo meta and the atom feed
   A minimal, responsive and feature-rich Jekyll theme for technical writing.
 
 # Fill in the protocol & hostname for your site.
