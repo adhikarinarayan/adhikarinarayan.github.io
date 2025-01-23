@@ -6,6 +6,8 @@ order: 3
 
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> 
+  <script data-goatcounter="https://narayan.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
 </head>
 
 <div class="profile-container">
@@ -24,8 +26,3 @@ order: 3
     </p>
   </div>
 </div>
-
-<head>
-<script data-goatcounter="https://narayan.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
-</head>
