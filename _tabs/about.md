@@ -16,4 +16,5 @@ order: 3
 <p>
     Beyond my professional work, I enjoy exploring the philosophical implications of AI, discussing books and music, and engaging in sports like cricket and volleyball. I also share my work and insights through presentations (slides available <a href="https://github.com/adhikarinarayan/talks">here</a>.). I'm always open to connecting with fellow AI enthusiasts and researchers to discuss new ideas and potential collaborations. Feel free to reach out!
 </p>
-<iframe src="https://narayan.goatcounter.com?hideui=1"></iframe>
+<iframe src="https://narayan.goatcounter.com?access-token=15z9w810idmub1apcgkesb0v6gzmh4zna4bvzc20826nspe4lwo"></iframe>
+
