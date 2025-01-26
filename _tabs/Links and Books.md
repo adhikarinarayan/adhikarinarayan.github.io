@@ -36,6 +36,36 @@ order: 2
   }
 </style>
 
+      <style type="text/css" media="screen">
+        .gr_grid_container {
+          /* customize grid container div here. eg: width: 500px; */
+        }
+
+        .gr_grid_book_container {
+          /* customize book cover container div here */
+          float: left;
+          width: 98px;
+          height: 160px;
+          padding: 0px 0px;
+          overflow: hidden;
+        }
+      </style>
+  <div id="gr_grid_widget_1737865306">
+        <!-- Show static html as a placeholder in case js is not enabled - javascript include will override this if things work -->
+            <h2>
+      <a style="text-decoration: none;" rel="nofollow" href="https://www.goodreads.com/review/list/15877994-narayan-adhikari?shelf=currently-reading&utm_medium=api&utm_source=grid_widget">Narayan's currently-reading book montage</a>
+    </h2>
+  <div class="gr_grid_container">
+    <div class="gr_grid_book_container"><a title="A Brief History of Intelligence: Evolution, AI, and the Five Breakthroughs That Made Our Brains" rel="nofollow" href="https://www.goodreads.com/book/show/62050269-a-brief-history-of-intelligence"><img alt="A Brief History of Intelligence: Evolution, AI, and the Five Breakthroughs That Made Our Brains" border="0" src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1678219676l/62050269._SX98_.jpg" /></a></div>
+    <br style="clear: both"/><br/><a class="gr_grid_branding" style="font-size: .9em; color: #382110; text-decoration: none; float: right; clear: both" rel="nofollow" href="https://www.goodreads.com/user/show/15877994-narayan-adhikari">Narayan Adhikari's favorite books »</a>
+  <noscript><br/>Share <a rel="nofollow" href="/">book reviews</a> and ratings with Narayan, and even join a <a rel="nofollow" href="/group">book club</a> on Goodreads.</noscript>
+  </div>
+
+      </div>
+      <script src="https://www.goodreads.com/review/grid_widget/15877994.Narayan's%20currently-reading%20book%20montage?cover_size=medium&hide_link=&hide_title=&num_books=1&order=d&shelf=currently-reading&sort=date_started&widget_id=1737865306" type="text/javascript" charset="utf-8"></script>
+
+
+
 <div class="brain-food-container">
   <div class="column-left">
     <h2>Useful Links</h2>
