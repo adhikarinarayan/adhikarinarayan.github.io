@@ -2,7 +2,7 @@
 icon: fa-solid fa-bookmark
 order: 2
 ---
-<div style="border: 2px solid #EBE8D5; border-radius:10px; padding: 0px 7px 0px 7px;"><h3 style=""><a href="https://www.goodreads.com/user/show/15877994-narayan-adhikari" style="text-decoration: none;color:#aaa;font-family:georgia,serif;font-style:italic;" rel="nofollow">Random Quotes</a></h3><br/><div id="gr_quote_body"></div><script src="https://www.goodreads.com/quotes/widget/15877994-narayan-adhikari?v=2" type="text/javascript"></script><div style="text-align: right;"><a href="https://www.goodreads.com/quotes" style="color: #382110; text-decoration: none; font-size: 10px;" rel="nofollow">Goodreads Quotes</a></div></div>
+<div style="border: 2px solid #EBE8D5; border-radius:10px; padding: 0px 7px 0px 7px;"><h3 style=""><a href="https://www.goodreads.com/user/show/15877994-narayan-adhikari" style="text-decoration: none;color:#aaa;font-family:georgia,serif;font-style:italic;" rel="nofollow">Random Quotes</a></h3><br/><div id="gr_quote_body"></div><script src="https://www.goodreads.com/quotes/widget/15877994-narayan-adhikari?v=2" type="text/javascript"></script><div style="text-align: right;"><a href="https://www.goodreads.com/quotes" style="color: #382110; text-decoration: none; font-size: 8px;" rel="nofollow">Goodreads Quotes</a></div></div>
 
 <style>
   /* Hide the "Brain Food" heading */
