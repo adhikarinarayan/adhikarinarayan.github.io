@@ -35,6 +35,7 @@ order: 2
   <div class="column-left">
     <h2>Useful Links</h2>
     <ul>
+      <li><a href="https://ml-resources.vercel.app/" target="_blank">AI Resources</a></li>
       <li><a href="https://github.com/dair-ai/ML-Papers-of-the-Week" target="_blank">ML Papers of the Week</a></li>
       <li><a href="https://plato.stanford.edu/index.html" target="_blank">Stanford Encyclopedia of Philosophy</a></li>
       <li><a href="https://www.scottaaronson.com/democritus" target="_blank">QC since Democritus</a></li>
