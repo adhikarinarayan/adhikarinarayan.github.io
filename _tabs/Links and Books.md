@@ -36,36 +36,6 @@ order: 2
   }
 </style>
 
-      <style type="text/css" media="screen">
-        .gr_grid_container {
-          /* customize grid container div here. eg: width: 500px; */
-        }
-
-        .gr_grid_book_container {
-          /* customize book cover container div here */
-          float: left;
-          width: 98px;
-          height: 160px;
-          padding: 0px 0px;
-          overflow: hidden;
-        }
-      </style>
-  <div id="gr_grid_widget_1737865306">
-        <!-- Show static html as a placeholder in case js is not enabled - javascript include will override this if things work -->
-            <h2>
-      <a style="text-decoration: none;" rel="nofollow" href="https://www.goodreads.com/review/list/15877994-narayan-adhikari?shelf=currently-reading&utm_medium=api&utm_source=grid_widget">Narayan's currently-reading book montage</a>
-    </h2>
-  <div class="gr_grid_container">
-    <div class="gr_grid_book_container"><a title="A Brief History of Intelligence: Evolution, AI, and the Five Breakthroughs That Made Our Brains" rel="nofollow" href="https://www.goodreads.com/book/show/62050269-a-brief-history-of-intelligence"><img alt="A Brief History of Intelligence: Evolution, AI, and the Five Breakthroughs That Made Our Brains" border="0" src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1678219676l/62050269._SX98_.jpg" /></a></div>
-    <br style="clear: both"/><br/><a class="gr_grid_branding" style="font-size: .9em; color: #382110; text-decoration: none; float: right; clear: both" rel="nofollow" href="https://www.goodreads.com/user/show/15877994-narayan-adhikari">Narayan Adhikari's favorite books »</a>
-  <noscript><br/>Share <a rel="nofollow" href="/">book reviews</a> and ratings with Narayan, and even join a <a rel="nofollow" href="/group">book club</a> on Goodreads.</noscript>
-  </div>
-
-      </div>
-      <script src="https://www.goodreads.com/review/grid_widget/15877994.Narayan's%20currently-reading%20book%20montage?cover_size=medium&hide_link=&hide_title=&num_books=1&order=d&shelf=currently-reading&sort=date_started&widget_id=1737865306" type="text/javascript" charset="utf-8"></script>
-
-
-
 <div class="brain-food-container">
   <div class="column-left">
     <h2>Useful Links</h2>
@@ -75,30 +45,62 @@ order: 2
       <li><a href="https://www.scottaaronson.com/democritus" target="_blank">QC since Democritus</a></li>
       <li><a href="https://paulgraham.com/articles.html" target="_blank">PG Essays</a></li>
       <li><a href="https://gwern.net/doc/science/1986-hamming" target="_blank">You and Your Research (Hamming's Essay)</a></li>
-      <li><a href="https://colah.github.io/" target="_blank">Colah's Blog</a></li>
-      <li><a href="https://huyenchip.com/blog/" target="_blank">Chip Huyen's Blog</a></li>
+      <li><a href="https://colah.github.io/" target="_blank">Colah's Blog</a> - Great for visual explanations of machine learning concepts.</li>
+       <li><a href="https://huyenchip.com/blog/" target="_blank">Chip Huyen's Blog</a> - Blog on machine learning and software engineering.</li>
     </ul>
   </div>
 
   <div class="column-right">
     <h2>Books I Enjoyed</h2>
+      <h3>Sci-Fi</h3>
     <ul>
       <li>Klara and the Sun by Kazuo Ishiguro</li>
       <li>Project Hail Mary by Andy Weir</li>
+       <li>Three Body Problem Trilogy by Liu Cixin</li>
+      <li>Dark Matter by Blake Crouch</li>
+    </ul>
+      <h3>Philosophy/General</h3>
+      <ul>
       <li>Why Machines Learn by Anil Ananthaswamy</li>
       <li>The MANIAC by Benjamín Labatut</li>
-      <li>The Brothers Karamazov by Fyodor Dostoevsky</li>
-      <li>Three Body Problem Trilogy by Liu Cixin</li>
+     <li>The Brothers Karamazov by Fyodor Dostoevsky</li>
       <li>The Last Question by Isaac Asimov</li>
-      <li>Stories of Your Life by Ted Chiang</li>
-      <li>Dark Matter by Blake Crouch</li>
-      <li>Crime and Punishment by Fyodor Dostoevsky</li>
-      <li>Norwegian Wood by Haruki Murakami</li>
-    </ul>
+        <li>Stories of Your Life by Ted Chiang</li>
+    <li>Crime and Punishment by Fyodor Dostoevsky</li>
+         <li>Norwegian Wood by Haruki Murakami</li>
+        </ul>
 
-    <h2>TBA</h2>
+    <h2>To Be Explored</h2>
     <ul>
-      <li>Artist -</li>
+      <li><strong>Artists to Check Out:</strong></li>
+      <li> Future lists of other types of resources will go here
     </ul>
   </div>
 </div>
+<style type="text/css" media="screen">
+  .gr_grid_container {
+    /* customize grid container div here. eg: width: 500px; */
+  }
+
+  .gr_grid_book_container {
+    /* customize book cover container div here */
+    float: left;
+    width: 98px;
+    height: 160px;
+    padding: 0px 0px;
+    overflow: hidden;
+  }
+</style>
+<div id="gr_grid_widget_1737865306">
+  <!-- Show static html as a placeholder in case js is not enabled - javascript include will override this if things work -->
+      <h2>
+<a style="text-decoration: none;" rel="nofollow" href="https://www.goodreads.com/review/list/15877994-narayan-adhikari?shelf=currently-reading&utm_medium=api&utm_source=grid_widget">Narayan's currently-reading book montage</a>
+</h2>
+<div class="gr_grid_container">
+<div class="gr_grid_book_container"><a title="A Brief History of Intelligence: Evolution, AI, and the Five Breakthroughs That Made Our Brains" rel="nofollow" href="https://www.goodreads.com/book/show/62050269-a-brief-history-of-intelligence"><img alt="A Brief History of Intelligence: Evolution, AI, and the Five Breakthroughs That Made Our Brains" border="0" src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1678219676l/62050269._SX98_.jpg" /></a></div>
+<br style="clear: both"/><br/><a class="gr_grid_branding" style="font-size: .9em; color: #382110; text-decoration: none; float: right; clear: both" rel="nofollow" href="https://www.goodreads.com/user/show/15877994-narayan-adhikari">Narayan Adhikari's favorite books »</a>
+<noscript><br/>Share <a rel="nofollow" href="/">book reviews</a> and ratings with Narayan, and even join a <a rel="nofollow" href="/group">book club</a> on Goodreads.</noscript>
+</div>
+
+</div>
+<script src="https://www.goodreads.com/review/grid_widget/15877994.Narayan's%20currently-reading%20book%20montage?cover_size=medium&hide_link=&hide_title=&num_books=1&order=d&shelf=currently-reading&sort=date_started&widget_id=1737865306" type="text/javascript" charset="utf-8"></script>
