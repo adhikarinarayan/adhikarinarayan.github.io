@@ -46,7 +46,7 @@ order: 2
       <li><a href="https://paulgraham.com/articles.html" target="_blank">PG Essays</a></li>
       <li><a href="https://gwern.net/doc/science/1986-hamming" target="_blank">You and Your Research (Hamming's Essay)</a></li>
       <li><a href="https://colah.github.io/" target="_blank">Colah's Blog</a> - Great for visual explanations of machine learning concepts.</li>
-       <li><a href="https://huyenchip.com/blog/" target="_blank">Chip Huyen's Blog</a> - Blog on machine learning and software engineering.</li>
+      <li><a href="https://huyenchip.com/blog/" target="_blank">Chip Huyen's Blog</a> - Blog on machine learning and software engineering.</li>
     </ul>
   </div>
 
@@ -63,12 +63,12 @@ order: 2
       <ul>
       <li>Why Machines Learn by Anil Ananthaswamy</li>
       <li>The MANIAC by Benjamín Labatut</li>
-     <li>The Brothers Karamazov by Fyodor Dostoevsky</li>
+      <li>The Brothers Karamazov by Fyodor Dostoevsky</li>
       <li>The Last Question by Isaac Asimov</li>
-        <li>Stories of Your Life by Ted Chiang</li>
-    <li>Crime and Punishment by Fyodor Dostoevsky</li>
-         <li>Norwegian Wood by Haruki Murakami</li>
-        </ul>
+      <li>Stories of Your Life by Ted Chiang</li>
+      <li>Crime and Punishment by Fyodor Dostoevsky</li>
+      <li>Norwegian Wood by Haruki Murakami</li>
+    </ul>
 
     <h2>To Be Explored</h2>
     <ul>
@@ -99,7 +99,7 @@ order: 2
 <div class="gr_grid_container">
 <div class="gr_grid_book_container"><a title="A Brief History of Intelligence: Evolution, AI, and the Five Breakthroughs That Made Our Brains" rel="nofollow" href="https://www.goodreads.com/book/show/62050269-a-brief-history-of-intelligence"><img alt="A Brief History of Intelligence: Evolution, AI, and the Five Breakthroughs That Made Our Brains" border="0" src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1678219676l/62050269._SX98_.jpg" /></a></div>
 <br style="clear: both"/><br/><a class="gr_grid_branding" style="font-size: .9em; color: #382110; text-decoration: none; float: right; clear: both" rel="nofollow" href="https://www.goodreads.com/user/show/15877994-narayan-adhikari">Narayan Adhikari's favorite books »</a>
-<noscript><br/>Share <a rel="nofollow" href="/">book reviews</a> and ratings with Narayan, and even join a <a rel="nofollow" href="/group">book club</a> on Goodreads.</noscript>
+  <noscript><br/>Share <a rel="nofollow" href="/">book reviews</a> and ratings with Narayan.</noscript>
 </div>
 
 </div>
