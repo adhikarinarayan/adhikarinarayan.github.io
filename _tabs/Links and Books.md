@@ -48,6 +48,7 @@ order: 2
   <div class="column-right">
     <h2>Books I Enjoyed</h2>
     <ul>
+      <li>Elon Musk by Walter Isaacson</li>
       <li>Klara and the Sun by Kazuo Ishiguro</li>
       <li>Project Hail Mary by Andy Weir</li>
       <li>Why Machines Learn by Anil Ananthaswamy</li>
